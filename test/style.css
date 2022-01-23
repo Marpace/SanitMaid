@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.input-fields {
+    width:  650px;
+    position: relative;
+    margin-top: 50px;
+}
+.quote-form {
+    height: 60vh;
+    width: 100%;
+    padding: 100px 50px;
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+}
+.quote-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 650px;
+    padding: 20px;
+    background-color: #314A7E;
+    border-radius: 10px;
+}
+.quote-item h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.quote-item-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.quote-options {
+    width: 420px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quote-options div {
+    color: white;
+    font-size: 25px;
+    height: 35px;
+    /* width: 80px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-right: 1px solid white;
+    cursor: pointer;
+}
+
+.quote-options div:last-child{
+    border-right: none;
+}
+
+.quote-item-button button {
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.quote-indicators {
+    width: 750px;
+    padding: 0 0 0 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quote-indicator {
+    background-color: #314A7E;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.bedrooms {
+    display: none;
+}
+.bathrooms {
+    display: none;
+}
+
+.size-input-wrapper {
+    justify-content: center;
+}
+.size-input-wrapper  h1 {
+    color: white;
+}
+#size-input {
+    height: 50px;
+    width: 80px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+#size-input:focus {
+    outline: none;
+    background: none;
+}
+.size {
+    display: none;
+}
+.extras {
+    display: none;
+}
+.frequency {
+    display: none;
+}
+.quote-summary {
+    width: 200px;
+    height: 75vh;
+    background-color: rgb(172, 172, 172);
+}
+
+.quote-summary-item {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+
+.active .d-block{
+    background-color: red;
+    transition: background-color .5s;
+}

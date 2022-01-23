@@ -1,0 +1,123 @@
+.services {
+    padding: 50px 20px;
+
+    &-title {
+        text-align: center;
+
+        h2 {
+            font-size: 24px;
+            font-weight: medium;
+        }
+    }
+
+    &-carousel {
+        height: 500px;
+        
+        &-images {
+            position: relative;
+            height: 300px;
+
+            img {
+                position: absolute;
+                height: 130px;
+                width: 130px;
+                object-fit: cover;
+                border-radius: 50%;
+                transition: .4s ease-in-out;
+            }
+            .image-active-c {
+                height: 185px;
+                width: 185px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 30;
+            }
+            .image-right-c {
+                left: calc(100% - 45px);
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 30;
+            }
+            .image-left-c {
+                left: -85px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 30;
+            }
+            .image-far-right-c {
+                left: 110%;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 10;
+            }
+            .image-far-left-c {
+                left: -50%;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 10;
+            }
+            .curtain {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 120%;
+                height: 100%;
+                z-index: 20;
+                background-color: $background_green;
+            }
+
+        }
+        &-info {
+            position: relative;
+            height: 120px;
+            max-width: 450px;
+            overflow: hidden;
+
+            .item-active-c {
+                opacity: 1;
+            }
+            &-item {
+                position: absolute;
+                @include flex_centered(column);   
+                opacity: 0;
+                transition: .4s;
+
+                &-text {
+                    text-align: center;
+
+                    p {
+                        font-weight: 500;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        &-controls {
+            @include flex_centered(row);
+            justify-content: space-between;
+            width: 80%;
+            margin: 30px auto;
+
+            i {
+                font-size: 25px
+            }
+            &-indicators {
+                @include flex_centered(row);
+                justify-content: space-between;
+                width: 40%;
+                max-width: 200px;
+
+                div {
+                    height: 15px; 
+                    width: 15px;
+                    border-radius: 50px;
+                    border: 1px solid black;
+                }
+                .indicator-active {
+                    background-color: $logo_blue;
+                }
+            }
+        }
+    }
+}

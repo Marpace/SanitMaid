@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="title">
+        <h2>Please enter you information to receive a quote</h2>
+    </div>
+    <div class="quote-form">    
+        <div class="input-fields">  
+            <!----------- Type of cleaning -------->
+            <div class="cleaning quote-item">
+                <h2>Which type of cleaning would you like?</h2>
+                <div class="quote-item-inner">
+                    <div class="quote-options">
+                        <div class="cleaning-options">Regular</div>
+                        <div class="cleaning-options">In-depth</div>
+                        <div class="cleaning-options">move in/out</div>
+                        <div class="cleaning-options">Sanitation</div>
+                    </div>
+                    <div class="quote-item-button">
+                        <button>NEXT</button>
+                    </div>
+                </div>
+            </div> 
+
+
+
+            <!----------- Number of bedrooms -------->
+            <div class="bedrooms quote-item">
+                <h2>How many bedrooms in the property?</h2>
+                <div class="quote-item-inner">
+                    <div class="quote-options">
+                        <div class="bedroom-options">2</div>
+                        <div class="bedroom-options">3</div>
+                        <div class="bedroom-options">4</div>
+                        <div class="bedroom-options">5</div>
+                        <div class="bedroom-options">6</div>
+                    </div>
+                    <div class="quote-item-button">
+                        <button>NEXT</button>
+                    </div>
+                </div>
+            </div>         
+            <!----------- Number of bathrooms -------->
+            <div class="bathrooms quote-item">
+                <h2>How many bathrooms in the property?</h2>
+                <div class="quote-item-inner">
+                    <div class="quote-options">
+                        <div class="bathroom-options">2</div>
+                        <div class="bathroom-options">3</div>
+                        <div class="bathroom-options">4</div>
+                        <div class="bathroom-options">5</div>
+                        <div class="bathroom-options">6</div>
+                    </div>
+                    <div class="quote-item-button">
+                        <button>NEXT</button>
+                    </div>
+                </div>
+            </div>         
+            <!----------- Size of the property -------->
+            <div class="size quote-item">
+                <h2>Please provide size of property</h2>
+                <div class="quote-item-inner">
+                    <div class="size-input-wrapper quote-options">
+                        <input id="size-input" type="text">
+                        <h1>Ft</h1>
+                    </div>
+                    <div class="quote-item-button">
+                        <button onclick="selectSize()">NEXT</button>
+                    </div>
+                </div>
+            </div>  
+
+            <!----------- Extras -------->
+            <div class="extras quote-item">
+                <h2>Choose your extras</h2>
+                <div class="quote-item-inner">
+                    <div class="quote-options">
+                        <div class="extras-options">Inside oven</div>
+                        <div class="extras-options">Inside fridge</div>
+                        <div class="extras-options">indoor window</div>
+                        <div class="extras-options">mattress</div>
+                    </div>
+                    <div class="quote-item-button">
+                        <button>NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <!----------- Frequency -------->
+            <div class="frequency quote-item">
+                <h2>How often would you like the service?</h2>
+                <div class="quote-item-inner">
+                    <div class="quote-options">
+                        <div class="frequency-options">Monthly</div>
+                        <div class="frequency-options">Bi-weekly</div>
+                        <div class="frequency-options">Weekly</div>
+                        <div class="frequency-options">One time</div>
+                    </div>
+                    <div class="quote-item-button">
+                        <button>NEXT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quote-summary">
+            <div class="quote-summary-item">
+                <p class="cleaning-selection"></p>
+                <p>&nbsp;cleaning</p>
+            </div>
+            <div class="quote-summary-item">
+                <p class="bedroom-selection"></p>
+                <p>&nbsp;bedrooms</p>
+            </div>
+            <div class="quote-summary-item">
+                <p class="bathroom-selection"></p>
+                <p>&nbsp;bathrooms</p>
+            </div>
+            <div class="quote-summary-item">
+                <p class="size-selection"></p>
+                <p>ft</p>
+            </div>
+            <div class="quote-summary-item" style="flex-direction: column;">
+                <p>Extras:&nbsp;</p>
+                <div class="extras-selection"></div>
+            </div>
+            <div class="quote-summary-item">
+                <p class="frequency-selection"></p>
+            </div>
+        </div>
+       
+    </div>
+    <div class="quote-indicators">
+        <div class="quote-indicator" style="font-size: 20px; color: white; display: flex; align-items: center; justify-content: center;">1</div>
+        <div class="quote-indicator" style="font-size: 20px; color: white; display: flex; align-items: center; justify-content: center;">2</div>
+        <div class="quote-indicator" style="font-size: 20px; color: white; display: flex; align-items: center; justify-content: center;">3</div>
+        <div class="quote-indicator" style="font-size: 20px; color: white; display: flex; align-items: center; justify-content: center;">4</div>
+        <div class="quote-indicator" style="font-size: 20px; color: white; display: flex; align-items: center; justify-content: center;">5</div>
+        <div class="quote-indicator" style="font-size: 20px; color: white; display: flex; align-items: center; justify-content: center;">6</div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
