@@ -1,3 +1,7 @@
+window.addEventListener('load', (event) => {
+    // JS init code hier (images are loaded at this point!)
+
+
 //selecting carousel elements
 const carouselImages = document.querySelectorAll(".services-carousel-images img");
 const carouselIndicators = document.querySelectorAll(".services-carousel-controls-indicators div");
@@ -120,3 +124,5 @@ nextBtn.addEventListener("click", function(){
 $(".quote-form-item-title").click(function(){
     $(this).next().slideToggle();
 })
+
+});
