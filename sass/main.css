@@ -502,3 +502,68 @@ a {
 .services-carousel-controls-indicators .indicator-active {
   background-color: #314A7E;
 }
+
+.quote {
+  padding: 20px;
+}
+
+.quote-title {
+  text-align: center;
+}
+
+.quote-form {
+  margin: 50px 0;
+}
+
+.quote-form h2, .quote-form h3, .quote-form p {
+  color: white;
+  font-weight: 300;
+  margin: 0;
+}
+
+.quote-form input {
+  width: 100px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.quote-form-item {
+  margin: 2px 0;
+  background-color: #314A7E;
+}
+
+.quote-form-item .quote-form-item-wrap {
+  display: none;
+}
+
+.quote-form-item-title, .quote-form-item-header, .quote-form-item-options, .quote-form-item-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  transition: .4s;
+}
+
+.quote-form-item-header p {
+  border-bottom: 1px solid white;
+  padding: 6px;
+}
+
+.quote-form-item-options div {
+  margin: 10px;
+}
+
+.quote-form-item-button button {
+  width: 80%;
+  padding: 5px;
+  background: none;
+  border: 2px solid white;
+  border-radius: 13px;
+  color: white;
+  font-size: 30px;
+}

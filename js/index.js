@@ -5,20 +5,23 @@ const carouselInfoItems = document.querySelectorAll(".services-carousel-info-ite
 const prevBtn = document.querySelector(".fa-chevron-left");
 const nextBtn = document.querySelector(".fa-chevron-right");
 
-
+// function to remove and add classes
 function switchClass(el, class1, class2){
     el.classList.remove(class1);
     el.classList.add(class2);
 }
 
+//variables to keep track of active carousel items 
 let imageIndex = 3
 let infoIndex = 0
 let indicatorIndex = 0;
 
+//boolean to check if animation is in progress
 let isAnimating = false;
 
+
+// function to rotate carousel images 
 function rotateImages(direction) {
-    
     if(direction === "forward") {
         imageIndex += 1;
         if(imageIndex >= 5) {imageIndex = 1}
@@ -34,8 +37,7 @@ function rotateImages(direction) {
                 switchClass(image, "image-far-left-c", "image-far-right-c");
                 image.src = `images/carousel-img-${imageIndex}.jpg`
             }           
-        })
-        
+        })       
     } else if (direction === "backwards") {
         imageIndex -= 1;
         if(imageIndex <= 0) {imageIndex = 4}
@@ -58,12 +60,11 @@ function rotateImages(direction) {
     }, 400);
 };
 
-
+// function to rotate carousel text 
 function rotateInfo(direction) {
     carouselInfoItems.forEach(item => {
         item.classList.remove("item-active-c")
     });
-
     if(direction === "forward") {
         infoIndex += 1
         if(infoIndex > 3 ) {infoIndex = 0};
@@ -74,6 +75,7 @@ function rotateInfo(direction) {
     carouselInfoItems[infoIndex].classList.add("item-active-c");
 }
  
+// function to switch carousel indicators  
 function switchIndicator(direction){
     carouselIndicators.forEach(item => {
         item.classList.remove("indicator-active")
@@ -89,10 +91,7 @@ function switchIndicator(direction){
 }
 
 
-
-
-
-
+//adding click events to carousel previous and next buttons 
 prevBtn.addEventListener("click", function(){
     if(isAnimating) return;
     isAnimating = true;
@@ -113,3 +112,11 @@ nextBtn.addEventListener("click", function(){
         isAnimating = false;
     }, 400);
 });
+
+// quote form functions
+
+
+//slide content up and down when an option is clicked
+$(".quote-form-item-title").click(function(){
+    $(this).next().slideToggle();
+})
