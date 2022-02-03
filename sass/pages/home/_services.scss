@@ -1,5 +1,5 @@
 .services {
-    padding: 50px 20px;
+    padding: 50px 0;
 
     &-title {
         text-align: center;
@@ -21,10 +21,6 @@
                 position: absolute;
                 height: 130px;
                 width: 130px;
-                @include responsive(500px) {
-                    height: 230px;
-                    width: 230px;
-                }
                 object-fit: cover;
                 border-radius: 50%;
                 transition: .4s ease-in-out;
@@ -44,7 +40,7 @@
                 z-index: 30;
             }
             .image-left-c {
-                left: -85px;
+                left: -92px;
                 top: 50%;
                 transform: translateY(-50%);
                 z-index: 30;
@@ -86,6 +82,7 @@
                 position: absolute;
                 @include flex_centered(column);   
                 opacity: 0;
+                padding: 0 20px;
                 transition: .4s;
 
                 &-text {

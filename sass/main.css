@@ -531,7 +531,7 @@ h1, h2, h3, h4, p {
 }
 
 .services {
-  padding: 50px 20px;
+  padding: 50px 0;
 }
 
 .services-title {
@@ -561,13 +561,6 @@ h1, h2, h3, h4, p {
   transition: .4s ease-in-out;
 }
 
-@media only screen and (min-width: 500px) {
-  .services-carousel-images img {
-    height: 230px;
-    width: 230px;
-  }
-}
-
 .services-carousel-images .image-active-c {
   height: 185px;
   width: 185px;
@@ -585,7 +578,7 @@ h1, h2, h3, h4, p {
 }
 
 .services-carousel-images .image-left-c {
-  left: -85px;
+  left: -92px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 30;
@@ -634,6 +627,7 @@ h1, h2, h3, h4, p {
   justify-content: center;
   align-items: center;
   opacity: 0;
+  padding: 0 20px;
   transition: .4s;
 }
 

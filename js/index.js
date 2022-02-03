@@ -57,9 +57,6 @@ function rotateImages(direction) {
             }           
         })
     }
-    setTimeout(() => {
-        isAnimating = false;
-    }, 400);
 };
 
 // function to rotate carousel text 
