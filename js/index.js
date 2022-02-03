@@ -1,5 +1,3 @@
-window.addEventListener('load', (event) => {
-    // JS init code hier (images are loaded at this point!)
 
 
 //selecting carousel elements
@@ -116,13 +114,24 @@ nextBtn.addEventListener("click", function(){
         isAnimating = false;
     }, 400);
 });
-
 // quote form functions
 
 
 //slide content up and down when an option is clicked
 $(".quote-form-item-title").click(function(){
     $(this).next().slideToggle();
-})
-
+    $(this).parent().toggleClass("open");
 });
+
+$("#size-options").parent().prev().click(function(){
+    $("#size-input").focus();
+});
+
+$(".quote-form-item-button").children().click(function(){
+    $(this).parent().parent().slideToggle();
+    $(this).parent().parent().parent().next().children(".quote-form-item-wrap").slideToggle();
+    $(this).parent().parent().parent().toggleClass("open");
+    $(this).parent().parent().parent().next().toggleClass("open");
+});
+
+console.log($(".quote-form-item-button").children())

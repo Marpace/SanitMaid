@@ -1,11 +1,10 @@
 .quote {
-    padding: 20px;
-
     &-title {
         text-align: center;
     }
     &-form {
         margin: 50px 0;
+        @include flex_centered(column);
 
         h2, h3, p {
             color: white;
@@ -20,10 +19,15 @@
             font-size: 20px;
             text-align: center;
         }
+        .open{
+            width: 90%;
+        }
         &-item {
-            margin: 2px 0;
+            margin: 1px 0;
             background-color: $logo_blue;
-
+            width: 80%;
+            transition: .4s;
+           
            .quote-form-item-wrap {
                display: none;
            }
@@ -36,18 +40,25 @@
                 padding: 20px;
                 transition: .4s;
             }
-            // &-header, &-options, &-button {
-            //     width: 100%;
-            //     // display: none;
-            // }
             &-header p{
                 border-bottom: 1px solid white;
                 padding: 6px;
             }
             &-options div{
                 margin: 10px;
-
             }
+            // #cleaning-options{
+            //     @include flex_centered(column);
+
+            //     div{
+            //      border-bottom: 1px solid white;
+            //      width: 70%;
+            //      padding-bottom: 20px;
+            //     }        
+            //     div:last-child {
+            //         border-bottom: none;
+            //     }
+            // }          
             &-button button {
                 width: 80%;
                 padding: 5px;
@@ -58,6 +69,12 @@
                 font-size: 30px;
             }
         
+        }
+        &-item:first-child {
+            border-radius: 10px 10px 0 0 ;
+        }
+        &-item:last-child {
+            border-radius: 0 0 10px 10px;
         }
     }
 

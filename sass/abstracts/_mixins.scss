@@ -12,14 +12,4 @@
     }
 }
     
-@mixin tilt_left {
-    transform: rotate(-1deg);
-}
 
-@mixin tilt_right {
-    transform: rotate(1deg);
-}
-
-@mixin box-shadow($back-color) {
-    box-shadow: 7px 10px $back-color;
-}

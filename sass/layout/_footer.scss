@@ -1,0 +1,60 @@
+.footer {
+    background-color: $logo_blue;
+    @include flex_centered(column);
+
+    h2, p, i {
+        color: white;
+        margin: 10px 5px;
+    }
+    p {
+        font-size: 20px;
+    }
+
+    &-section {
+        width: 90%;
+        margin: 30px 0;
+
+        div {
+            @include flex_centered(row);
+            justify-content: space-between;
+        }
+    }
+    &-contact {
+        div {
+            justify-content: flex-start;
+
+            i {
+                font-size: 30px;
+            }
+        }
+        .fax-icon {
+            height: 27px;
+            width: 27px;
+            border-radius: 5px;
+            background-color: white;
+            margin: 10px 5px;
+
+            i {
+                font-size: 17px;
+                color: $logo_blue;
+            }
+        }
+
+    }
+    &-hours {
+        div {
+            width: 100%;
+        }
+    }
+    &-social {
+        &-icons {
+            width: 60%;
+            margin: auto;
+
+            i {
+                font-size: 40px;
+            }
+        }
+    }
+
+}

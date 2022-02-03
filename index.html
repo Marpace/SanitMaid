@@ -27,7 +27,7 @@
     <section class="nav-wrap-c">
       <div class="navbar-c">
         <div class="nav-brand-c">
-          <img src="images/SanitMaid logo 3 2.png" alt="">
+          <h2>Sanit Maid</h2>
         </div>        
         <div class="navbar-toggler-c">
           <div id="toggler-div-1" class="toggler-div"></div>
@@ -40,7 +40,7 @@
               <div class="nav-link-c"><h2 class="current-page"><a href="index.html">Home</a></h2></div>
               <div id="services-drop-down" class="nav-link-c">
                   <div class="services-nav-link drop-down-trigger">
-                    <h2><a>Services</a></h2>
+                    <h2><a>Types of cleaning</a></h2>
                     <i class="fas fa-caret-down"></i>
                   </div>
                   <div class="drop-down-menu">
@@ -48,19 +48,15 @@
                       <div class="drop-down-link">
                           <h3>Regular</h3>
                       </div>
-                      <hr class="menu-divider">
                       <div class="drop-down-link">
                           <h3>In-depth</h3> 
                       </div>
-                      <hr class="menu-divider">
                       <div class="drop-down-link">
                           <h3>Move in/out</h3>
                       </div>
-                      <hr class="menu-divider">
                       <div class="drop-down-link">
                           <h3>Sanitation</h3>
                       </div>
-                      <hr class="menu-divider">
                       <div class="drop-down-link">
                           <h3>Extras</h3>
                       </div>
@@ -78,7 +74,8 @@
 
     <!-- ***************  HEADER  ******************* -->
     <section class="header">
-      <img src="images/pexels-michelangelo-buonarroti-4176539.jpg" alt="">
+      <img class="mobile-background" src="images/ripples.jpg" alt="">
+      <img class="desktop-background" src="images/ripples 2.jpg" alt="">
       <div class="header-text">
         <h2>New technology and cleaning procedures focused on protecting your health</h2>
         <button type="button" class="btn btn-outline">Get a free quote</button>
@@ -156,7 +153,7 @@
         <h2>Enter your information to receive a free quote</h2>
       </div>
       <div class="quote-form">
-        <div class="quote-form-item">
+        <div class="quote-form-item open">
           <div class="quote-form-item-title">
             <h2>Type of cleaning</h2>
           </div>
@@ -164,7 +161,7 @@
             <div  class="quote-form-item-header">
               <p>Please chose which type of cleaning you would like</p>
             </div>
-            <div class="quote-form-item-options">
+            <div id="cleaning-options" class="quote-form-item-options">
               <div><h3>Regular</h3></div>
               <div><h3>Move in/out</h3></div>
               <div><h3>In-depth</h3></div>
@@ -181,7 +178,7 @@
             <div class="quote-form-item-header">
               <p>How many bedrooms?</p>
             </div>
-            <div class="quote-form-item-options" >
+            <div id="bedrooms-options" class="quote-form-item-options" >
               <div><h3>Studio</h3></div>
               <div><h3>1</h3></div>
               <div><h3>2</h3></div>
@@ -200,7 +197,7 @@
             <div class="quote-form-item-header">
               <p>How many bathrooms?</p>
             </div>
-            <div class="quote-form-item-options">
+            <div id="bathrooms-options" class="quote-form-item-options">
               <div><h3>1</h3></div>
               <div><h3>2</h3></div>
               <div><h3>3</h3></div>
@@ -216,8 +213,8 @@
             <div class="quote-form-item-header">
               <p>Please provide property size</p>
             </div>
-            <div class="quote-form-item-options">
-              <input type="text">
+            <div id="size-options" class="quote-form-item-options">
+              <input id="size-input" type="text">
               <h3>ft&sup2;</h3>
             </div>
             <div class="quote-form-item-button"><button>Next</button></div>
@@ -229,7 +226,7 @@
             <div class="quote-form-item-header">
               <p>Which extras would you like to add?</p>
             </div>
-            <div class="quote-form-item-options">
+            <div id="extras-options" class="quote-form-item-options">
               <h3>Inside oven</h3>
               <h3>Inside refrigirator</h3>
               <h3>Inside windows</h3>
@@ -244,7 +241,7 @@
             <div class="quote-form-item-header">
               <p>How often would you like the service?</p>
             </div>
-            <div class="quote-form-item-options">
+            <div id="frequency-options" class="quote-form-item-options">
               <div><h3>Monthly</h3></div>
               <div><h3>Bi-weekly</h3></div>
               <div><h3>Weekly</h3></div>
@@ -255,10 +252,75 @@
         </div>
         <div class="quote-form-item">
           <div class="quote-form-item-title"><h3>$000</h3></div>
-          <div class="quote-form-item-button" style="display: none;"><button>Book now</button></div>
+          <div class="quote-form-item-wrap">
+            <div class="quote-form-item-button"><button>Book now</button></div>
+          </div>
         </div>
       </div>
     </section>
+    <!-- ***************  FOOTER  ******************* -->
+    <section class="footer">
+      <div class="footer-section footer-contact">
+        <div class="footer-section-title">
+          <h2>CONTACT US</h2>
+        </div>      
+          <div>
+            <i class="fas fa-phone-square-alt"></i>
+            <p>(416) 123-4567</p>
+          </div>
+          <div>
+            <i class="fas fa-envelope-square"></i>
+            <p>info@sanitmaid.ca</p>
+          </div>
+          <div>
+            <div class="fax-icon">
+              <i class="fas fa-fax"></i>
+            </div>
+            <p>(416) 123-4567</p>
+          </div>
+      </div>
+      <div class="footer-section footer-hours">
+        <div class="footer-section-title">
+          <h2>HOURS</h2>
+        </div>
+        <div>
+          <p>Monday</p>
+          <p>8:00 - 4:00</p>
+        </div>
+        <div>
+          <p>Tuesday</p>
+          <p>8:00 - 4:00</p>
+        </div>
+        <div>
+          <p>Wednesday</p>
+          <p>8:00 - 4:00</p>
+        </div>
+        <div>
+          <p>Thursday</p>
+          <p>8:00 - 4:00</p>
+        </div>
+        <div>
+          <p>Friday</p>
+          <p>8:00 - 4:00</p>
+        </div>
+        <div>
+          <p>Saturday</p>
+          <p>8:00 - 4:00</p>
+        </div>
+        <div>
+          <p>Sunday</p>
+          <p>8:00 - 4:00</p>
+        </div>
+      </div>
+      <div class="footer-section footer-social">
+        <div class="footer-social-icons">
+          <i class="fab fa-facebook-square"></i>
+          <i class="fab fa-instagram-square"></i>
+          <i class="fab fa-twitter-square"></i>
+        </div>
+      </div>
+    </section>
+
 
     <!-- Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

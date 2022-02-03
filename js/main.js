@@ -3,10 +3,14 @@
 const toggler = document.querySelector(".navbar-toggler-c");
 const togglerDivs = [...document.querySelectorAll(".toggler-div")];
 const navMenu = document.querySelector(".collapsed-nav-c");
-const navLinks = document.querySelector(".nav-links-c");
+// const navLinksContainer = document.querySelector(".nav-links-c");
+const navLinks = document.querySelectorAll(".nav-link-c a");
 const servicesMenu = document.querySelector(".services-nav-link");
 const navBar = document.querySelector(".navbar-c");
-const navLogo = document.querySelector(".nav-brand-c")
+const navLogo = document.querySelector(".nav-brand-c");
+const navWrap = document.querySelector(".nav-wrap-c");
+const dropDownIcon = document.querySelector(".services-nav-link i");
+const currentPageUnderline = document.querySelector(".current-page");
 
 
 
@@ -21,23 +25,44 @@ const body = document.querySelector("body");
 // detecting scroll to animate navbar when scrolled 80px from top
 body.addEventListener("scroll", function() {
     if(body.scrollTop > 80){
-        navBar.style.backgroundColor = ("rgb(49, 74, 126)");
-        navBar.style.height = "80px"
-        navLogo.style.height = "50px"
-        navLogo.style.width = "50px"
-        navLogo.style.marginLeft = "20px"
-        togglerDivs.forEach(div => {
-            div.style.backgroundColor = "rgb(255, 255, 255)";
-        })
-
-    }
-    else {
+        if(screen.width < 768) {
+            navBar.style.backgroundColor = ("rgb(1, 11, 32)");
+            navBar.style.height = "80px"
+            // navLogo.style.height = "50px"
+            // navLogo.style.width = "50px"
+            // navLogo.style.marginLeft = "20px"
+            navLogo.children[0].style.color = "white";
+            togglerDivs.forEach(div => {
+                div.style.backgroundColor = "rgb(255, 255, 255)";
+            });      
+        } else if(screen.width >= 768) {
+            navWrap.style.backgroundColor = "rgb(1, 11, 32)";
+            navBar.style.height = "80px";
+            dropDownIcon.style.color = "white";
+            currentPageUnderline.style.borderBottom = "2px solid white";
+            navLogo.children[0].style.color = "white";
+            navLinks.forEach(link => {
+                link.style.color = "white"
+            });
+            
+        } 
+    } else {
+        if(screen.width >= 768) {
+            navLinks.forEach(link => {
+                link.style.color = "rgb(1, 11, 32)";
+            });
+            navLogo.children[0].style.color = "black";
+            currentPageUnderline.style.borderBottom = "2px solid black";
+            dropDownIcon.style.color = "black"
+        }
+        navBar.style.height = "100px"
+        navWrap.style.backgroundColor = "";
         navBar.style.backgroundColor = "";
-
-        navLogo.style.height = "60px"
-        navLogo.style.width = "60px"
-        navLogo.style.marginLeft = "0px"
-
+        navLogo.children[0].style.color = "black";
+        // navLogo.style.height = "60px"
+        // navLogo.style.width = "60px"
+        // navLogo.style.marginLeft = "0px"
+    
         togglerDivs.forEach(div => {
             div.style.backgroundColor = "rgb(0, 0, 0)";
         })
@@ -79,8 +104,10 @@ const toggleMenu = function(){
         // Nav menu extend  animation 
         navMenu.style.left = "0"
 
+        navLogo.children[0].style.color = "white";
+        
         isVisible = true;
-
+        
     } else {
         
         if (navBar.style.backgroundColor === ""){
@@ -88,8 +115,8 @@ const toggleMenu = function(){
                 div.style.backgroundColor = "rgb(0, 0, 0)";
             })
         }
-
-
+        
+        
         //Toggler into lines animation
         togglerDivs[0].style.transform = "rotate(0deg)";
         togglerDivs[2].style.transform = "rotate(0deg)";
@@ -99,9 +126,13 @@ const toggleMenu = function(){
             togglerDivs[0].style.top = "";
             togglerDivs[2].style.top = "30px";
         }, 200);
-
+        
         // Nav menu collapse animation
         navMenu.style.left = "100%"
+
+        if(getComputedStyle(navBar).backgroundColor !== "rgb(1, 11, 32)"){
+            navLogo.children[0].style.color = "black";
+        }
         
         // Drop down collapse animation
         dropDownMenu.style.height = "0px"
@@ -117,16 +148,21 @@ toggler.addEventListener("click", function(){
 
 // Drop down menu animation (only for screen width 599px or less)
 const toggleDropDownMenu = function() {
-    if(window.screen.width <= 599){
-        if(getComputedStyle(dropDownMenu).height === "0px"){   
+    
+    if(getComputedStyle(dropDownMenu).height === "0px"){ 
+        if(window.screen.width <= 767){  
             dropDownMenu.style.height = "265px";
-        } else {
-            dropDownMenu.style.height = "0px";
+        } else if (window.screen.width >= 768) {
+            dropDownMenu.style.height = "200px";
         }
+    } else {
+        dropDownMenu.style.height = "0px";
     }
+    
 };
 
 dropDownTrigger.addEventListener("click", function(){
-    toggleDropDownMenu()
+    toggleDropDownMenu();
+    console.log("clicked")
 });
 
