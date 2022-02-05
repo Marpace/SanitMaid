@@ -14,6 +14,7 @@ const currentPageUnderline = document.querySelector(".current-page");
 
 
 
+
 //Drop down menu
 const dropDownTrigger = document.querySelector(".drop-down-trigger");
 const dropDownMenu = document.querySelector(".drop-down-menu");

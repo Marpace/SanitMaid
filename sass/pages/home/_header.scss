@@ -25,6 +25,9 @@
         border-radius: 10px;
         background-color: rgba(255, 255, 255, 0.5);
         z-index: 50;
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: 1s;
 
         h2 {
             font-size: 2rem;
@@ -44,21 +47,55 @@
         position: absolute;
         height: 190px;
         width: 100%;
-        top: 510px;
+        bottom: 0;
         background-image: linear-gradient(rgba(220, 236, 226, 0), $background_green);
+    }
+
+    @keyframes upDown {
+        20% {transform: translateY(10px);}
+        50% {transform: translateY(0px);}
+        75% {transform: translateY(10px);}
+        100% {transform: translateY(0px);}
+    }
+
+    .down-arrow {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-name: upDown;
+        animation-duration: 1s;
+        animation-delay: 2s;
+        transition: .5s;
+        @include responsive($tablet) {
+            bottom: 20px;
+        }
+
+        & i{
+            position: absolute;
+            font-size: 30px;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #4e4e4e;
+        }
+        & i:last-child {
+            bottom: 0;
+        }
+
     }
 }
 
 @include responsive($tablet) {
     .header {
-        height: 800px;
+        height: 100vh;
         
         .header-text {
             top: 200px; 
             padding: 45px;
         }
         .gradient {
-            top: 610px;
+           bottom: 0;
         }
     }
 }
@@ -87,6 +124,11 @@
             }
             @include responsive($desktop_large) {
                 left: 60%;
+                margin-right: 200px;
+            }
+            @include responsive($desktop_xl) {
+                left: 60%;
+                margin-right: 300px;
             }
 
             h2 {

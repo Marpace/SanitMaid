@@ -1,7 +1,27 @@
 
+// Select header element 
+const headerText = document.querySelector(".header-text");
+const donwArrow = document.querySelector(".down-arrow")
+
+//on load animations **REMINDER** switch this to css animation 
+window.onload = function (){  
+    //animating header text element
+    headerText.style.opacity = "1";
+    headerText.style.transform = "translateY(0)";
+};
+
+body.addEventListener("scroll", function() {
+    if(body.scrollTop> 80){
+        donwArrow.style.opacity = "0";
+    } else {
+        donwArrow.style.opacity = "1";
+    }
+})
+
 
 //selecting carousel elements
 const carouselImages = document.querySelectorAll(".services-carousel-images img");
+const mobileCarouselImages = document.querySelectorAll(".mobile-image")
 const carouselIndicators = document.querySelectorAll(".services-carousel-controls-indicators div");
 const carouselInfoItems = document.querySelectorAll(".services-carousel-info-item");
 const prevBtn = document.querySelector(".fa-chevron-left");
@@ -24,38 +44,52 @@ let isAnimating = false;
 
 // function to rotate carousel images 
 function rotateImages(direction) {
-    if(direction === "forward") {
-        imageIndex += 1;
-        if(imageIndex >= 5) {imageIndex = 1}
-        carouselImages.forEach(image => {
-            if (image.classList.contains("image-active-c")) {switchClass(image, "image-active-c", "image-left-c")}
-            else if (image.classList.contains("image-left-c")) {
-                switchClass(image, "image-left-c", "image-far-left-c");
-                image.src = `images/carousel-img-${imageIndex}.jpg`
-            }
-            else if (image.classList.contains("image-right-c")) {switchClass(image, "image-right-c", "image-active-c")}
-            else if (image.classList.contains("image-far-right-c")) {switchClass(image, "image-far-right-c", "image-right-c")}           
-            else if (image.classList.contains("image-far-left-c")) {
-                switchClass(image, "image-far-left-c", "image-far-right-c");
-                image.src = `images/carousel-img-${imageIndex}.jpg`
-            }           
-        })       
-    } else if (direction === "backwards") {
-        imageIndex -= 1;
-        if(imageIndex <= 0) {imageIndex = 4}
-        carouselImages.forEach(image => {
-            if (image.classList.contains("image-active-c")) {switchClass(image, "image-active-c", "image-right-c")}
-            else if (image.classList.contains("image-left-c")) {switchClass(image, "image-left-c", "image-active-c")}
-            else if (image.classList.contains("image-right-c")){
-                switchClass(image, "image-right-c", "image-far-right-c")
-                image.src = `images/carousel-img-${imageIndex}.jpg`
-            }
-            else if (image.classList.contains("image-far-left-c")) {switchClass(image, "image-far-left-c", "image-left-c")}           
-            else if (image.classList.contains("image-far-right-c")) {
-                switchClass(image, "image-far-right-c", "image-far-left-c");
-                image.src = `images/carousel-img-${imageIndex}.jpg`
-            }           
-        })
+    if(screen.width >= 768){
+        if(direction === "forward") {
+            imageIndex += 1;
+            if(imageIndex >= 5) {imageIndex = 1}
+            carouselImages.forEach(image => {
+                if (image.classList.contains("image-active-c")) {switchClass(image, "image-active-c", "image-left-c")}
+                else if (image.classList.contains("image-left-c")) {
+                    switchClass(image, "image-left-c", "image-far-left-c");
+                    image.src = `images/carousel-img-${imageIndex}.jpg`
+                }
+                else if (image.classList.contains("image-right-c")) {switchClass(image, "image-right-c", "image-active-c")}
+                else if (image.classList.contains("image-far-right-c")) {switchClass(image, "image-far-right-c", "image-right-c")}           
+                else if (image.classList.contains("image-far-left-c")) {
+                    switchClass(image, "image-far-left-c", "image-far-right-c");
+                    image.src = `images/carousel-img-${imageIndex}.jpg`
+                }           
+            })       
+        } else if (direction === "backwards") {
+            imageIndex -= 1;
+            if(imageIndex <= 0) {imageIndex = 4}
+            carouselImages.forEach(image => {
+                if (image.classList.contains("image-active-c")) {switchClass(image, "image-active-c", "image-right-c")}
+                else if (image.classList.contains("image-left-c")) {switchClass(image, "image-left-c", "image-active-c")}
+                else if (image.classList.contains("image-right-c")){
+                    switchClass(image, "image-right-c", "image-far-right-c")
+                    image.src = `images/carousel-img-${imageIndex}.jpg`
+                }
+                else if (image.classList.contains("image-far-left-c")) {switchClass(image, "image-far-left-c", "image-left-c")}           
+                else if (image.classList.contains("image-far-right-c")) {
+                    switchClass(image, "image-far-right-c", "image-far-left-c");
+                    image.src = `images/carousel-img-${imageIndex}.jpg`
+                }           
+            })
+        }
+    } else {
+        if(direction === "forward") {
+            mobileCarouselImages.forEach(img => {
+                if(img.classList.contains("image-active-c")){ switchClass(img, "image-active-c", "image-left-c")}
+                else if(img.classList.contains("image-right-c")) {switchClass(img, "image-right-c", "image-active-c")}
+                else if(img.classList.contains("image-left-c")) {switchClass(img, "image-lfet-c", "image-right-c")}
+            });
+
+        } else if(direction === "backwards"){
+
+
+        }
     }
 };
 

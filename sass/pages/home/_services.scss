@@ -1,5 +1,6 @@
 .services {
     padding: 50px 0;
+    height: 100vh;
 
     &-title {
         text-align: center;
@@ -7,6 +8,10 @@
         h2 {
             font-size: 24px;
             font-weight: medium;
+            @include responsive($tablet_large) {
+                font-size: 30px;
+                font-weight: 600;
+            }
         }
     }
 
@@ -16,6 +21,9 @@
         &-images {
             position: relative;
             height: 300px;
+            @include responsive($tablet_large) {
+                height: 350px;
+            }
 
             img {
                 position: absolute;
@@ -26,27 +34,27 @@
                 transition: .4s ease-in-out;
             }
             .image-active-c {
-                height: 185px;
-                width: 185px;
+                height: 200px;
+                width: 200px;
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 30;
             }
             .image-right-c {
-                left: calc(100% - 65px);
+                left: 100%;
                 top: 50%;
                 transform: translateY(-50%);
                 z-index: 30;
             }
             .image-left-c {
-                left: -92px;
+                left: -130px;
                 top: 50%;
                 transform: translateY(-50%);
                 z-index: 30;
             }
             .image-far-right-c {
-                left: 110%;
+                left: 150%;
                 top: 50%;
                 transform: translateY(-50%);
                 z-index: 10;
@@ -65,6 +73,30 @@
                 height: 100%;
                 z-index: 20;
                 background-color: $background_green;
+            }
+            @include responsive($tablet_large) {
+                img {
+                    height: 200px;
+                    width: 200px;
+                }
+                .image-active-c {
+                    height: 285px;
+                    width: 285px;
+                }
+                .image-right-c {
+                    left: calc(100% - 100px);
+                }
+                .image-left-c {
+                    left: -100px;
+                }
+            }
+            @include responsive($desktop) {
+                .image-right-c {
+                    left: calc(100% - 260px);
+                }
+                .image-left-c {
+                    left: 60px;
+                }
             }
 
         }
@@ -124,3 +156,4 @@
         }
     }
 }
+
