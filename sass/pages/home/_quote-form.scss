@@ -21,11 +21,13 @@
         }
         .open{
             width: 90%;
+            max-width: 500px;
         }
         &-item {
             margin: 1px 0;
             background-color: $logo_blue;
             width: 80%;
+            max-width: 450px;
             transition: .4s;
            
            .quote-form-item-wrap {

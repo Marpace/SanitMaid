@@ -1,18 +1,10 @@
 .services {
     padding: 50px 0;
-    height: 100vh;
+    height: calc(100vh + 80px);
 
     &-title {
         text-align: center;
 
-        h2 {
-            font-size: 24px;
-            font-weight: medium;
-            @include responsive($tablet_large) {
-                font-size: 30px;
-                font-weight: 600;
-            }
-        }
     }
 
     &-carousel {
@@ -25,6 +17,9 @@
                 height: 350px;
             }
 
+            .desktop-image {
+                display: none;
+            }
             img {
                 position: absolute;
                 height: 130px;
@@ -53,17 +48,8 @@
                 transform: translateY(-50%);
                 z-index: 30;
             }
-            .image-far-right-c {
-                left: 150%;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 10;
-            }
-            .image-far-left-c {
-                left: -50%;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 10;
+            .image-behind {
+                display: none;
             }
             .curtain {
                 position: absolute;
@@ -75,6 +61,12 @@
                 background-color: $background_green;
             }
             @include responsive($tablet_large) {
+                .mobile-image {
+                    display: none;
+                }
+                .desktop-image {
+                    display: block;
+                }
                 img {
                     height: 200px;
                     width: 200px;
@@ -89,6 +81,18 @@
                 .image-left-c {
                     left: -100px;
                 }
+                .image-far-right-c {
+                    left: 150%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 10;
+                }
+                .image-far-left-c {
+                    left: -50%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 10;
+                }
             }
             @include responsive($desktop) {
                 .image-right-c {
@@ -102,9 +106,7 @@
         }
         &-info {
             position: relative;
-            height: 120px;
-            max-width: 450px;
-            overflow: hidden;
+            height: 170px;
             margin: auto;
 
             .item-active-c {
@@ -112,7 +114,13 @@
             }
             &-item {
                 position: absolute;
+                height: 100%;
+                width: 100%;
+                max-width: 500px;
+                left: 50%; 
+                transform: translateX(-50%);
                 @include flex_centered(column);   
+                justify-content: space-between;
                 opacity: 0;
                 padding: 0 20px;
                 transition: .4s;

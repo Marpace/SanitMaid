@@ -20,7 +20,7 @@ body.addEventListener("scroll", function() {
 
 
 //selecting carousel elements
-const carouselImages = document.querySelectorAll(".services-carousel-images img");
+const carouselImages = document.querySelectorAll(".desktop-image");
 const mobileCarouselImages = document.querySelectorAll(".mobile-image")
 const carouselIndicators = document.querySelectorAll(".services-carousel-controls-indicators div");
 const carouselInfoItems = document.querySelectorAll(".services-carousel-info-item");
@@ -83,12 +83,16 @@ function rotateImages(direction) {
             mobileCarouselImages.forEach(img => {
                 if(img.classList.contains("image-active-c")){ switchClass(img, "image-active-c", "image-left-c")}
                 else if(img.classList.contains("image-right-c")) {switchClass(img, "image-right-c", "image-active-c")}
-                else if(img.classList.contains("image-left-c")) {switchClass(img, "image-lfet-c", "image-right-c")}
+                else if(img.classList.contains("image-left-c")) {switchClass(img, "image-left-c", "image-behind")}
+                else if(img.classList.contains("image-behind")) {switchClass(img, "image-behind", "image-right-c")}
             });
-
         } else if(direction === "backwards"){
-
-
+            mobileCarouselImages.forEach(img => {
+                if(img.classList.contains("image-active-c")){ switchClass(img, "image-active-c", "image-right-c")}
+                else if(img.classList.contains("image-right-c")) {switchClass(img, "image-right-c", "image-behind")}
+                else if(img.classList.contains("image-left-c")) {switchClass(img, "image-left-c", "image-active-c")}
+                else if(img.classList.contains("image-behind")) {switchClass(img, "image-behind", "image-left-c")}
+            });
         }
     }
 };
