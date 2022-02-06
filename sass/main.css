@@ -42,6 +42,18 @@ h1, h2, h3, h4, p {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .section-title {
+    font-size: 33px;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .section-title {
+    font-size: 40px;
+  }
+}
+
 .nav-wrap-c {
   background-color: white;
   position: fixed;
@@ -451,6 +463,17 @@ h1, h2, h3, h4, p {
   display: none;
 }
 
+@keyframes headerTextAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .header .header-text {
   display: flex;
   flex-direction: column;
@@ -464,9 +487,8 @@ h1, h2, h3, h4, p {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 50;
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: 1s;
+  animation-name: headerTextAnimation;
+  animation-duration: 2s;
 }
 
 .header .header-text h2 {
@@ -729,6 +751,24 @@ h1, h2, h3, h4, p {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .services-carousel-images .image-right-c {
+    left: calc(100% - 350px);
+  }
+  .services-carousel-images .image-left-c {
+    left: 150px;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .services-carousel-images .image-right-c {
+    left: calc(100% - 450px);
+  }
+  .services-carousel-images .image-left-c {
+    left: 250px;
+  }
+}
+
 .services-carousel-info {
   position: relative;
   height: 170px;
@@ -778,6 +818,7 @@ h1, h2, h3, h4, p {
 
 .services-carousel-controls i {
   font-size: 25px;
+  cursor: pointer;
 }
 
 .services-carousel-controls-indicators {
@@ -806,11 +847,19 @@ h1, h2, h3, h4, p {
 }
 
 .quote-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-form form {
   margin: 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .quote-form h2, .quote-form h3, .quote-form p {
@@ -855,16 +904,50 @@ h1, h2, h3, h4, p {
   transition: .4s;
 }
 
+.quote-form-item-header {
+  padding: 0 20px 20px 20px;
+}
+
 .quote-form-item-header p {
   border-bottom: 1px solid white;
   padding: 6px;
 }
 
-.quote-form-item-options div {
-  margin: 10px;
+.quote-form-item-options input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
 }
 
-.quote-form-item-button button {
+.quote-form-item-options label {
+  display: inline-block;
+  background-color: #010b20;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  border-radius: 4px;
+}
+
+.quote-form-item-options input[type="radio"]:checked + label {
+  background-color: #8f8f8f;
+}
+
+.quote-form-item-options input[type="text"] {
+  border-bottom: 1px solid white;
+}
+
+.quote-form-item #cleaning-options, .quote-form-item #extras-options, .quote-form-item #frequency-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-form-item #cleaning-options label, .quote-form-item #extras-options label, .quote-form-item #frequency-options label {
+  padding: 10px 20px;
+}
+
+.quote-form-item-button {
   width: 80%;
   padding: 5px;
   background: none;
@@ -872,6 +955,7 @@ h1, h2, h3, h4, p {
   border-radius: 13px;
   color: white;
   font-size: 30px;
+  margin: 0 auto 20px;
 }
 
 .quote-form-item:first-child {
@@ -880,4 +964,70 @@ h1, h2, h3, h4, p {
 
 .quote-form-item:last-child {
   border-radius: 0 0 10px 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .quote-form {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .quote-form p {
+    font-size: 20px;
+  }
+  .quote-form input {
+    width: 100px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
+  .quote-form .open {
+    width: 90%;
+    max-width: 500px;
+  }
+  .quote-form-item {
+    margin: 1px 0;
+    background-color: #010b20;
+    width: 80%;
+    max-width: 450px;
+    transition: .4s;
+  }
+  .quote-form-item .quote-form-item-wrap {
+    display: none;
+  }
+  .quote-form-item-title, .quote-form-item-header, .quote-form-item-options, .quote-form-item-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: .4s;
+  }
+  .quote-form-item-header p {
+    border-bottom: 1px solid white;
+    padding: 6px;
+  }
+  .quote-form-item-options div {
+    margin: 10px;
+  }
+  .quote-form-item-button button {
+    width: 80%;
+    padding: 5px;
+    background: none;
+    border: 2px solid white;
+    border-radius: 13px;
+    color: white;
+    font-size: 30px;
+  }
+  .quote-form-item:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+  .quote-form-item:last-child {
+    border-radius: 0 0 10px 10px;
+  }
 }

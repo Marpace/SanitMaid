@@ -102,6 +102,22 @@
                     left: 60px;
                 }
             }
+            @include responsive($desktop_large) {
+                .image-right-c {
+                    left: calc(100% - 350px);
+                }
+                .image-left-c {
+                    left: 150px;
+                }
+            }
+            @include responsive($desktop_xl) {
+                .image-right-c {
+                    left: calc(100% - 450px);
+                }
+                .image-left-c {
+                    left: 250px;
+                }
+            }
 
         }
         &-info {
@@ -143,7 +159,8 @@
             margin: 30px auto;
 
             i {
-                font-size: 25px
+                font-size: 25px;
+                cursor: pointer;
             }
             &-indicators {
                 @include flex_centered(row);

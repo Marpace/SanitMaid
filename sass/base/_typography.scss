@@ -17,4 +17,10 @@ h1, h2, h3, h4, p {
         font-size: 30px;
         font-weight: 700;
     }
+    @include responsive($desktop_large) {
+        font-size: 33px;
+    }
+    @include responsive($desktop_xl) {
+        font-size: 40px;
+    }
 }

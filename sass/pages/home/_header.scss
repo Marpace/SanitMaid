@@ -15,6 +15,10 @@
     .desktop-background {
         display: none;
     }
+    @keyframes headerTextAnimation {
+        0% {opacity: 0; transform: translateY(-50px);}
+        100% {opacity: 1; transform: translateY(0)}
+    }
     .header-text {
         @include flex_centered(column);
         justify-content: space-between;
@@ -25,9 +29,8 @@
         border-radius: 10px;
         background-color: rgba(255, 255, 255, 0.5);
         z-index: 50;
-        opacity: 0;
-        transform: translateY(-50px);
-        transition: 1s;
+        animation-name: headerTextAnimation;
+        animation-duration: 2s;
 
         h2 {
             font-size: 2rem;
@@ -82,7 +85,6 @@
         & i:last-child {
             bottom: 0;
         }
-
     }
 }
 

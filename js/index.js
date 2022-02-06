@@ -3,12 +3,12 @@
 const headerText = document.querySelector(".header-text");
 const donwArrow = document.querySelector(".down-arrow")
 
-//on load animations **REMINDER** switch this to css animation 
-window.onload = function (){  
-    //animating header text element
-    headerText.style.opacity = "1";
-    headerText.style.transform = "translateY(0)";
-};
+// //on load animations **REMINDER** switch this to css animation 
+// window.onload = function (){  
+//     //animating header text element
+//     headerText.style.opacity = "1";
+//     headerText.style.transform = "translateY(0)";
+// };
 
 body.addEventListener("scroll", function() {
     if(body.scrollTop> 80){
@@ -158,15 +158,21 @@ $(".quote-form-item-title").click(function(){
     $(this).parent().toggleClass("open");
 });
 
+
 $("#size-options").parent().prev().click(function(){
     $("#size-input").focus();
 });
+// $("#bath-next-btn").click(function (){
+//     $("#size-input").focus();
+//     console.log("clicked")
+// });
 
-$(".quote-form-item-button").children().click(function(){
-    $(this).parent().parent().slideToggle();
-    $(this).parent().parent().parent().next().children(".quote-form-item-wrap").slideToggle();
-    $(this).parent().parent().parent().toggleClass("open");
-    $(this).parent().parent().parent().next().toggleClass("open");
+
+$(".quote-form-item-button").click(function(){
+    $(this).parent().slideToggle();
+    $(this).parent().parent().next().children(".quote-form-item-wrap").slideToggle();
+    $(this).parent().parent().toggleClass("open");
+    $(this).parent().parent().next().toggleClass("open");
 });
 
 console.log($(".quote-form-item-button").children())
