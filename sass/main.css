@@ -54,6 +54,22 @@ h1, h2, h3, h4, p {
   }
 }
 
+.button-light {
+  width: 80%;
+  max-width: 200px;
+  padding: 5px;
+  background: none;
+  border: 2px solid white;
+  border-radius: 13px;
+  color: white;
+  font-size: 25px;
+  margin: 0 auto 20px;
+}
+
+.button-light:active {
+  background-color: #acabab;
+}
+
 .nav-wrap-c {
   background-color: white;
   position: fixed;
@@ -377,11 +393,60 @@ h1, h2, h3, h4, p {
 }
 
 .footer {
+  position: relative;
   background-color: #010b20;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 300px;
+  padding-top: 50px;
+}
+
+.footer .footer-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 80%;
+  padding: 0 20px;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 25px;
+  box-shadow: 2px 5px 8px #030114;
+  background-image: linear-gradient(to right, #182F60, #05696F, #182F60);
+}
+
+.footer .footer-top h2 {
+  width: 50%;
+  min-width: 150px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.footer .footer-top button {
+  max-width: 150px;
+  font-size: 15px;
+  margin: 0;
+}
+
+@media only screen and (min-width: 992px) {
+  .footer .footer-top {
+    height: 150px;
+    top: -100px;
+    padding: 0 100px;
+  }
+  .footer .footer-top h2 {
+    font-size: 27px;
+  }
+  .footer .footer-top button {
+    max-width: 200px;
+    font-size: 20px;
+  }
 }
 
 .footer .footer-about {
@@ -468,17 +533,35 @@ h1, h2, h3, h4, p {
 
 @media only screen and (min-width: 768px) {
   .footer {
-    padding: 100px 100px 0;
+    padding: 100px 20px 0;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-evenly;
   }
+}
+
+@media only screen and (min-width: 768px) and (min-width: 992px) {
+  .footer {
+    padding: 100px 10% 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-width: 1200px) {
+  .footer {
+    padding: 100px 17% 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
   .footer-section {
     align-items: flex-start;
   }
   .footer .footer-about {
     display: block;
     flex-basis: 50%;
+  }
+  .footer .footer-about p {
+    font-size: 17px;
   }
   .footer .footer-about div:last-child {
     max-width: 200px;
@@ -518,10 +601,6 @@ h1, h2, h3, h4, p {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.header .desktop-background {
-  display: none;
 }
 
 @keyframes headerTextAnimation {
@@ -691,6 +770,30 @@ h1, h2, h3, h4, p {
 @media only screen and (min-width: 768px) and (min-width: 992px) {
   .header .header-text h2 {
     font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header .header-text .header-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .header .header-text .header-buttons button {
+    font-size: 15px;
+    padding: 15px 10px;
+    font-weight: 500;
+    margin: 0;
+    background: none;
+  }
+  .header .header-text .header-buttons button:last-child {
+    background-color: #010b20;
+    border: none;
+    color: white;
+    margin-left: 10px;
   }
 }
 
@@ -984,10 +1087,11 @@ h1, h2, h3, h4, p {
   font-size: 20px;
   color: white;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .quote-form-item-options input[type="radio"]:checked + label {
-  background-color: #8f8f8f;
+  border: 1px solid #bebebe;
 }
 
 .quote-form-item-options input[type="text"] {
@@ -1024,6 +1128,7 @@ h1, h2, h3, h4, p {
   color: white;
   font-size: 30px;
   margin: 0 auto 20px;
+  cursor: pointer;
 }
 
 .quote-form-item:first-child {
@@ -1081,6 +1186,7 @@ h1, h2, h3, h4, p {
     align-items: center;
     justify-content: space-between;
     width: 80%;
+    max-width: 900px;
     margin: 0 auto 100px;
   }
   .quote .quote-icons-item {

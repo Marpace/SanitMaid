@@ -13,7 +13,7 @@
         left: 0;
     }
     .desktop-background {
-        display: none;
+        // display: none;
     }
     @keyframes headerTextAnimation {
         0% {opacity: 0; transform: translateY(-50px);}
@@ -137,6 +137,25 @@
                 font-size: 1.8rem;
                 @include responsive($desktop){
                     font-size: 2rem;
+                }
+            }
+            .header-buttons {
+                @include flex_centered(row);
+                justify-content: space-between;
+                width: 100%;
+
+                button {
+                    font-size: 15px;
+                    padding: 15px 10px;
+                    font-weight: 500;
+                    margin: 0;
+                    background: none;
+                }
+                button:last-child {
+                    background-color: $logo_blue;
+                    border: none;
+                    color: white;
+                    margin-left: 10px;
                 }
             }
         }

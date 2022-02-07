@@ -155,6 +155,7 @@ const quoteItems = [...document.querySelectorAll(".quote-form-item")]
 const quoteButtons = [...document.querySelectorAll(".quote-form-item-button")]
 const iconText = [...document.querySelectorAll(".quote-icons-item-text")]
 
+
 let quoteIndex = 0;
 
 
@@ -199,23 +200,16 @@ if(screen.width >= 768) {
 
     quoteButtons.forEach(button => {
         button.addEventListener("click", function(){
+            const selectedValues = document.querySelectorAll('input[type="radio"]:checked');
+
             console.log(quoteItems[quoteIndex])
             quoteItems[quoteIndex].style.opacity = "0";
             quoteItems[quoteIndex].style.zIndex = "0";
             quoteItems[quoteIndex + 1].style.opacity = "1";
             quoteItems[quoteIndex + 1].style.zIndex = "10";
             iconText[quoteIndex].style.opacity = "1";
+            iconText[quoteIndex].innerHTML = selectedValues[selectedValues.length - 1].nextElementSibling.innerHTML;
             quoteIndex += 1;
         });
     });
 }
-
-function getSelectedValue() {
-    const value = document.querySelector('input[name="cleaning-type"]:checked');
-
-    console.log(value.nextElementSibling.innerHTML.toString())
-}
-
-quoteButtons[0].addEventListener("click", function(){
-    getSelectedValue();
-});

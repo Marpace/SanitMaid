@@ -1,0 +1,14 @@
+.button-light {
+    width: 80%;
+    max-width: 200px;
+    padding: 5px;
+    background: none;
+    border: 2px solid white;
+    border-radius: 13px;
+    color: white;
+    font-size: 25px;
+    margin: 0 auto 20px;
+}
+.button-light:active{
+    background-color: rgb(172, 171, 171);
+}

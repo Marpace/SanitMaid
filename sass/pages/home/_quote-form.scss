@@ -60,9 +60,10 @@
                     color: white;
                     border-radius: 4px;
                     // margin: 10px 0;
+                    cursor: pointer;
                 }
                 input[type="radio"]:checked + label {
-                    background-color: rgb(143, 143, 143);
+                    border: 1px solid rgb(190, 190, 190);
                 }       
                 input[type="text"] {
                     width: 100px;
@@ -92,6 +93,7 @@
                 color: white;
                 font-size: 30px;
                 margin: 0 auto 20px;
+                cursor: pointer;
             }
         
         }
@@ -149,6 +151,7 @@
             @include flex_centered(row);
             justify-content: space-between;
             width: 80%;
+            max-width: 900px;
             margin: 0 auto 100px;
 
             &-item {

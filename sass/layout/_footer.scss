@@ -1,7 +1,50 @@
 .footer {
+    position: relative;
     background-color: $logo_blue;
     @include flex_centered(column);
+    margin-top: 300px;
+    padding-top: 50px;
 
+    .footer-top {
+        @include flex_centered(row);
+        justify-content: space-between;
+        height: 100px;
+        width: 80%;
+        padding: 0 20px;
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 25px;
+        box-shadow: 2px 5px 8px rgb(3, 1, 20);
+        background-image: linear-gradient(to right, #182F60, #05696F,#182F60);
+        
+        h2 {
+            width: 50%;
+            min-width: 150px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        button {
+            max-width: 150px;
+            font-size: 15px;
+            margin: 0;
+        }
+        @include responsive($desktop){
+            height: 150px;
+            top: -100px;
+            padding: 0 100px;
+
+            h2{
+                font-size: 27px;
+            }
+            button {
+                max-width: 200px;
+                font-size: 20px;
+            }
+        }
+
+    }
     .footer-about{
         display: none;
     }
@@ -72,10 +115,16 @@
 
 @include responsive($tablet_large){
     .footer {
-        padding: 100px 100px 0;
+        padding: 100px 20px 0;
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-evenly;
+        @include responsive($desktop){
+            padding: 100px 10% 0;
+        }
+        @include responsive($desktop_large){
+            padding: 100px 17% 0;
+        }
 
         &-section {
             align-items: flex-start;
@@ -84,6 +133,9 @@
             display: block;
             flex-basis: 50%;
 
+            p {
+                font-size: 17px;
+            }
             div:last-child {
                 max-width: 200px;
             }
