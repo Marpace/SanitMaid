@@ -384,6 +384,10 @@ h1, h2, h3, h4, p {
   align-items: center;
 }
 
+.footer .footer-about {
+  display: none;
+}
+
 .footer h2, .footer p, .footer i {
   color: white;
   margin: 10px 5px;
@@ -393,20 +397,31 @@ h1, h2, h3, h4, p {
   font-size: 20px;
 }
 
+@media only screen and (min-width: 768px) {
+  .footer p {
+    font-size: 15px;
+  }
+}
+
 .footer-section {
   width: 90%;
   margin: 30px 0;
 }
 
-.footer-section div {
+@media only screen and (min-width: 600px) {
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.footer-contact div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
-}
-
-.footer-contact div {
   justify-content: flex-start;
 }
 
@@ -428,16 +443,62 @@ h1, h2, h3, h4, p {
 }
 
 .footer-hours div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  max-width: 350px;
 }
 
 .footer-social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   width: 60%;
   margin: auto;
 }
 
 .footer-social-icons i {
   font-size: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 100px 100px 0;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  .footer-section {
+    align-items: flex-start;
+  }
+  .footer .footer-about {
+    display: block;
+    flex-basis: 50%;
+  }
+  .footer .footer-about div:last-child {
+    max-width: 200px;
+  }
+  .footer-contact {
+    flex-basis: 50%;
+  }
+  .footer-hours {
+    max-width: 200px;
+  }
+  .footer-hours p {
+    margin: 5px 0;
+  }
+  .footer-social {
+    flex-basis: 20%;
+  }
+  .footer-social-icons {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 
 .header {
@@ -635,7 +696,7 @@ h1, h2, h3, h4, p {
 
 .services {
   padding: 50px 0;
-  height: calc(100vh + 80px);
+  height: 95vh;
 }
 
 .services-title {
@@ -842,6 +903,12 @@ h1, h2, h3, h4, p {
   background-color: #010b20;
 }
 
+@media only screen and (min-width: 992px) {
+  .services {
+    height: 110vh;
+  }
+}
+
 .quote-title {
   text-align: center;
 }
@@ -868,26 +935,17 @@ h1, h2, h3, h4, p {
   margin: 0;
 }
 
-.quote-form input {
-  width: 100px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-}
-
 .quote-form .open {
   width: 90%;
-  max-width: 500px;
 }
 
 .quote-form-item {
   margin: 1px 0;
   background-color: #010b20;
   width: 80%;
+  max-width: 500px;
   max-width: 450px;
-  transition: .4s;
+  transition: .7s;
 }
 
 .quote-form-item .quote-form-item-wrap {
@@ -923,7 +981,7 @@ h1, h2, h3, h4, p {
   display: inline-block;
   background-color: #010b20;
   padding: 10px;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
   border-radius: 4px;
 }
@@ -933,7 +991,13 @@ h1, h2, h3, h4, p {
 }
 
 .quote-form-item-options input[type="text"] {
+  width: 100px;
+  background: none;
+  border: none;
   border-bottom: 1px solid white;
+  color: white;
+  font-size: 20px;
+  text-align: center;
 }
 
 .quote-form-item #cleaning-options, .quote-form-item #extras-options, .quote-form-item #frequency-options {
@@ -947,7 +1011,11 @@ h1, h2, h3, h4, p {
   padding: 10px 20px;
 }
 
-.quote-form-item-button {
+.quote-form-item #size-options {
+  justify-content: center;
+}
+
+.quote-form-item-button, .quote-form-item .quote-price-button {
   width: 80%;
   padding: 5px;
   background: none;
@@ -966,68 +1034,85 @@ h1, h2, h3, h4, p {
   border-radius: 0 0 10px 10px;
 }
 
+.quote .quote-icons {
+  display: none;
+}
+
 @media only screen and (min-width: 768px) {
-  .quote-form {
-    margin: 50px 0;
+  .quote .quote-form form {
+    position: relative;
+    height: 250px;
+  }
+  .quote .quote-form form .quote-form-item-title {
+    display: none;
+  }
+  .quote .quote-form form .quote-form-item {
+    position: absolute;
+    opacity: 0;
+    max-width: 700px;
+    border-radius: 20px;
+    padding: 20px;
+    z-index: 0;
+  }
+  .quote .quote-form form .quote-form-item-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .quote .quote-form form .quote-form-item-wrap .quote-form-item-header {
+    padding-bottom: 0;
+  }
+  .quote .quote-form form .quote-form-item-wrap .quote-form-item-button .quote-price-button {
+    width: 30%;
+    margin: 0 auto;
+  }
+  .quote .quote-form form .quote-form-item-wrap #cleaning-options, .quote .quote-form form .quote-form-item-wrap #extras-options, .quote .quote-form form .quote-form-item-wrap #frequency-options {
+    flex-direction: row;
+  }
+  .quote .quote-form form .quote-form-item:first-child {
+    opacity: 1;
+    z-index: 10;
+    width: 700px;
+  }
+  .quote .quote-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto 100px;
+  }
+  .quote .quote-icons-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    height: 100px;
   }
-  .quote-form p {
-    font-size: 20px;
-  }
-  .quote-form input {
-    width: 100px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-  }
-  .quote-form .open {
-    width: 90%;
-    max-width: 500px;
-  }
-  .quote-form-item {
-    margin: 1px 0;
+  .quote .quote-icons-item-icon {
+    height: 50px;
+    width: 50px;
     background-color: #010b20;
-    width: 80%;
-    max-width: 450px;
-    transition: .4s;
-  }
-  .quote-form-item .quote-form-item-wrap {
-    display: none;
-  }
-  .quote-form-item-title, .quote-form-item-header, .quote-form-item-options, .quote-form-item-button {
+    border-radius: 10px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 20px;
-    transition: .4s;
   }
-  .quote-form-item-header p {
-    border-bottom: 1px solid white;
-    padding: 6px;
-  }
-  .quote-form-item-options div {
-    margin: 10px;
-  }
-  .quote-form-item-button button {
+  .quote .quote-icons-item-icon img {
     width: 80%;
-    padding: 5px;
-    background: none;
-    border: 2px solid white;
-    border-radius: 13px;
+  }
+  .quote .quote-icons-item-text {
+    padding: 10px;
+    background-color: #010b20;
     color: white;
-    font-size: 30px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: .6s;
   }
-  .quote-form-item:first-child {
-    border-radius: 10px 10px 0 0;
-  }
-  .quote-form-item:last-child {
-    border-radius: 0 0 10px 10px;
+  .quote .quote-icons-item:nth-child(2) img {
+    width: 65%;
   }
 }

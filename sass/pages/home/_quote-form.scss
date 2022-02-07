@@ -15,24 +15,16 @@
             font-weight: 300;
             margin: 0;
         }
-        input {
-            width: 100px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 20px;
-            text-align: center;
-        }
         .open{
             width: 90%;
-            max-width: 500px;
         }
         &-item {
             margin: 1px 0;
             background-color: $logo_blue;
             width: 80%;
+            max-width: 500px;
             max-width: 450px;
-            transition: .4s;
+            transition: .7s;
            
            .quote-form-item-wrap {
                display: none;
@@ -63,7 +55,7 @@
                     display: inline-block;
                     background-color: $logo_blue;
                     padding: 10px;
-                    font-size: 16px;
+                    font-size: 20px;
                     // border: 2px solid white;
                     color: white;
                     border-radius: 4px;
@@ -73,7 +65,13 @@
                     background-color: rgb(143, 143, 143);
                 }       
                 input[type="text"] {
+                    width: 100px;
+                    background: none;
+                    border: none;
                     border-bottom: 1px solid white;
+                    color: white;
+                    font-size: 20px;
+                    text-align: center;
                 }
             } 
             #cleaning-options, #extras-options, #frequency-options{
@@ -82,7 +80,10 @@
                     padding: 10px 20px;
                 }
             }
-            &-button{
+            #size-options {
+                justify-content: center;
+            }
+            &-button, .quote-price-button{
                 width: 80%;
                 padding: 5px;
                 background: none;
@@ -101,69 +102,83 @@
             border-radius: 0 0 10px 10px;
         }
     }
+    .quote-icons {
+        display: none;
+    }
     @include responsive($tablet_large) {
-        &-form {
-            margin: 50px 0;
-            @include flex_centered(column);
-    
-            p {
-                font-size: 20px;
-            }
-            input {
-                width: 100px;
-                background: none;
-                border: none;
-                color: white;
-                font-size: 20px;
-                text-align: center;
-            }
-            .open{
-                width: 90%;
-                max-width: 500px;
-            }
-            &-item {
-                margin: 1px 0;
-                background-color: $logo_blue;
-                width: 80%;
-                max-width: 450px;
-                transition: .4s;
-               
-               .quote-form-item-wrap {
-                   display: none;
-               }
-                &-title, &-header, &-options, &-button {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-evenly;
-                    align-items: center;
-                    text-align: center;
+        .quote-form{
+            form {
+                position: relative;
+                height: 250px;
+                .quote-form-item-title {
+                    display: none;
+                }
+                .quote-form-item {
+                    position: absolute;
+                    opacity: 0;
+                    max-width: 700px;
+                    border-radius: 20px;
                     padding: 20px;
-                    transition: .4s;
+                    z-index: 0;
+        
+                    &-wrap {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+        
+                        .quote-form-item-header {
+                            padding-bottom: 0;
+                        }
+                        .quote-form-item-button .quote-price-button{
+                            width: 30%;
+                            margin: 0 auto;
+                        }
+                        #cleaning-options, #extras-options, #frequency-options {
+                            flex-direction: row;
+                        }
+                    }
                 }
-                &-header p{
-                    border-bottom: 1px solid white;
-                    padding: 6px;
+                .quote-form-item:first-child {
+                    opacity: 1;
+                    z-index: 10;
+                    width: 700px;
                 }
-                &-options div{
-                    margin: 10px;
-                }         
-                &-button button {
-                    width: 80%;
-                    padding: 5px;
-                    background: none;
-                    border: 2px solid white;
-                    border-radius: 13px;
+            }
+        }
+        .quote-icons {
+            @include flex_centered(row);
+            justify-content: space-between;
+            width: 80%;
+            margin: 0 auto 100px;
+
+            &-item {
+                @include flex_centered(column);
+                justify-content: space-between;
+                height: 100px;
+
+                &-icon {
+                    height: 50px;
+                    width: 50px;
+                    background-color: $logo_blue;
+                    border-radius: 10px;
+                    @include flex_centered(row);
+
+                    img {
+                        width: 80%;
+                    }
+                }
+                &-text {
+                    padding: 10px;
+                    background-color: $logo_blue;
                     color: white;
-                    font-size: 30px;
+                    border-radius: 10px;
+                    opacity: 0;
+                    transition: .6s;
                 }
-            
             }
-            &-item:first-child {
-                border-radius: 10px 10px 0 0 ;
+            &-item:nth-child(2) img {
+                width: 65%;
             }
-            &-item:last-child {
-                border-radius: 0 0 10px 10px;
-            }
-        } 
+        }
     }
 }

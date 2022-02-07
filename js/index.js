@@ -151,6 +151,12 @@ nextBtn.addEventListener("click", function(){
 });
 // quote form functions
 
+const quoteItems = [...document.querySelectorAll(".quote-form-item")]
+const quoteButtons = [...document.querySelectorAll(".quote-form-item-button")]
+const iconText = [...document.querySelectorAll(".quote-icons-item-text")]
+
+let quoteIndex = 0;
+
 
 //slide content up and down when an option is clicked
 $(".quote-form-item-title").click(function(){
@@ -167,12 +173,49 @@ $("#size-options").parent().prev().click(function(){
 //     console.log("clicked")
 // });
 
+let iconIndex = 0;
 
-$(".quote-form-item-button").click(function(){
-    $(this).parent().slideToggle();
-    $(this).parent().parent().next().children(".quote-form-item-wrap").slideToggle();
-    $(this).parent().parent().toggleClass("open");
-    $(this).parent().parent().next().toggleClass("open");
+if (screen.width <= 767){
+    $(".quote-form-item-button").click(function(){
+        $(this).parent().slideToggle();
+        $(this).parent().parent().next().children(".quote-form-item-wrap").slideToggle();
+        $(this).parent().parent().toggleClass("open");
+        $(this).parent().parent().next().toggleClass("open");
+    });
+}
+// } else {
+//     $(".quote-form-item-button").each(function(){
+//         $(this).click(function(){
+//             console.log($(this).parent().parent())
+//             $(this).parent().parent().css("opacity", "0")
+//             $(this).parent().parent().next().css("opacity", "1")
+//             $(".quote-icons-item-text").eq(iconIndex).fadeIn(600, "linear");
+//             iconIndex += 1;
+//         });  
+//     })
+// }
+
+if(screen.width >= 768) {
+
+    quoteButtons.forEach(button => {
+        button.addEventListener("click", function(){
+            console.log(quoteItems[quoteIndex])
+            quoteItems[quoteIndex].style.opacity = "0";
+            quoteItems[quoteIndex].style.zIndex = "0";
+            quoteItems[quoteIndex + 1].style.opacity = "1";
+            quoteItems[quoteIndex + 1].style.zIndex = "10";
+            iconText[quoteIndex].style.opacity = "1";
+            quoteIndex += 1;
+        });
+    });
+}
+
+function getSelectedValue() {
+    const value = document.querySelector('input[name="cleaning-type"]:checked');
+
+    console.log(value.nextElementSibling.innerHTML.toString())
+}
+
+quoteButtons[0].addEventListener("click", function(){
+    getSelectedValue();
 });
-
-console.log($(".quote-form-item-button").children())
