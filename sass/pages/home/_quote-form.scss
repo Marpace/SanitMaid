@@ -26,7 +26,7 @@
             max-width: 450px;
             transition: .7s;
            
-           .quote-form-item-wrap {
+           &-wrap {
                display: none;
            }
             &-title, &-header, &-options, &-button {
@@ -38,6 +38,17 @@
                 padding: 20px;
                 transition: .4s;
             }
+            &-title {
+
+                img {
+                    height: 40px;
+                    object-fit: cover;
+                    display: none;
+                }   
+                div {
+                    text-align: right;
+                }    
+            }
             &-header {
                 padding: 0 20px 20px 20px;
             }
@@ -46,7 +57,7 @@
                 padding: 6px;
             }
             &-options{
-                input[type="radio"] {
+                input[type="radio"], input[type="checkbox"] {
                     opacity: 0;
                     position: fixed;
                     width: 0
@@ -62,7 +73,10 @@
                     // margin: 10px 0;
                     cursor: pointer;
                 }
-                input[type="radio"]:checked + label {
+                label:hover {
+                    border: 1px solid rgb(190, 190, 190);
+                }
+                input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
                     border: 1px solid rgb(190, 190, 190);
                 }       
                 input[type="text"] {
@@ -84,8 +98,9 @@
             #size-options {
                 justify-content: center;
             }
-            &-button, .quote-price-button{
+            &-button, .quote-price-button, .size-button, .extras-button{
                 width: 80%;
+                max-width: 200px;
                 padding: 5px;
                 background: none;
                 border: 2px solid white;
@@ -94,19 +109,23 @@
                 font-size: 30px;
                 margin: 0 auto 20px;
                 cursor: pointer;
+                text-align: center;
+            }
+            .validation-alert {
+                color: white;
+                text-align: center;
+                margin: 20px 0;
+                display: none;
             }
         
-        }
-        &-item:first-child {
-            border-radius: 10px 10px 0 0 ;
-        }
-        &-item:last-child {
-            border-radius: 0 0 10px 10px;
         }
     }
     .quote-icons {
         display: none;
     }
+
+// --------------------- MEDIA QUERIES ----------------------
+
     @include responsive($tablet_large) {
         .quote-form{
             form {
@@ -122,12 +141,12 @@
                     border-radius: 20px;
                     padding: 20px;
                     z-index: 0;
-        
+                    
                     &-wrap {
                         display: flex;
                         flex-direction: column;
                         width: 100%;
-        
+                        
                         .quote-form-item-header {
                             padding-bottom: 0;
                         }
@@ -141,10 +160,12 @@
                     }
                 }
                 .quote-form-item:first-child {
-                    opacity: 1;
-                    z-index: 10;
                     width: 700px;
                 }
+                .fade-in {
+                    opacity: 1;
+                    z-index: 10;
+                }      
             }
         }
         .quote-icons {
@@ -160,7 +181,7 @@
                 height: 100px;
 
                 &-icon {
-                    height: 50px;
+                    min-height: 50px;
                     width: 50px;
                     background-color: $logo_blue;
                     border-radius: 10px;
@@ -170,13 +191,17 @@
                         width: 80%;
                     }
                 }
-                &-text {
+                &-text, .size-text, .extras-text {
                     padding: 10px;
+                    margin: 5px 0;
                     background-color: $logo_blue;
                     color: white;
                     border-radius: 10px;
                     opacity: 0;
                     transition: .6s;
+                }
+                .extras-text {
+                    opacity: 1;
                 }
             }
             &-item:nth-child(2) img {

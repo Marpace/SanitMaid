@@ -33,6 +33,8 @@ h1, h2, h3, h4, p {
 .section-title {
   font-size: 24px;
   font-weight: 600;
+  max-width: 80%;
+  margin: auto;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1051,7 +1053,7 @@ h1, h2, h3, h4, p {
   transition: .7s;
 }
 
-.quote-form-item .quote-form-item-wrap {
+.quote-form-item-wrap {
   display: none;
 }
 
@@ -1065,6 +1067,16 @@ h1, h2, h3, h4, p {
   transition: .4s;
 }
 
+.quote-form-item-title img {
+  height: 40px;
+  object-fit: cover;
+  display: none;
+}
+
+.quote-form-item-title div {
+  text-align: right;
+}
+
 .quote-form-item-header {
   padding: 0 20px 20px 20px;
 }
@@ -1074,7 +1086,7 @@ h1, h2, h3, h4, p {
   padding: 6px;
 }
 
-.quote-form-item-options input[type="radio"] {
+.quote-form-item-options input[type="radio"], .quote-form-item-options input[type="checkbox"] {
   opacity: 0;
   position: fixed;
   width: 0;
@@ -1090,7 +1102,11 @@ h1, h2, h3, h4, p {
   cursor: pointer;
 }
 
-.quote-form-item-options input[type="radio"]:checked + label {
+.quote-form-item-options label:hover {
+  border: 1px solid #bebebe;
+}
+
+.quote-form-item-options input[type="radio"]:checked + label, .quote-form-item-options input[type="checkbox"]:checked + label {
   border: 1px solid #bebebe;
 }
 
@@ -1119,8 +1135,9 @@ h1, h2, h3, h4, p {
   justify-content: center;
 }
 
-.quote-form-item-button, .quote-form-item .quote-price-button {
+.quote-form-item-button, .quote-form-item .quote-price-button, .quote-form-item .size-button, .quote-form-item .extras-button {
   width: 80%;
+  max-width: 200px;
   padding: 5px;
   background: none;
   border: 2px solid white;
@@ -1129,14 +1146,14 @@ h1, h2, h3, h4, p {
   font-size: 30px;
   margin: 0 auto 20px;
   cursor: pointer;
+  text-align: center;
 }
 
-.quote-form-item:first-child {
-  border-radius: 10px 10px 0 0;
-}
-
-.quote-form-item:last-child {
-  border-radius: 0 0 10px 10px;
+.quote-form-item .validation-alert {
+  color: white;
+  text-align: center;
+  margin: 20px 0;
+  display: none;
 }
 
 .quote .quote-icons {
@@ -1175,9 +1192,11 @@ h1, h2, h3, h4, p {
     flex-direction: row;
   }
   .quote .quote-form form .quote-form-item:first-child {
+    width: 700px;
+  }
+  .quote .quote-form form .fade-in {
     opacity: 1;
     z-index: 10;
-    width: 700px;
   }
   .quote .quote-icons {
     display: flex;
@@ -1198,7 +1217,7 @@ h1, h2, h3, h4, p {
     height: 100px;
   }
   .quote .quote-icons-item-icon {
-    height: 50px;
+    min-height: 50px;
     width: 50px;
     background-color: #010b20;
     border-radius: 10px;
@@ -1210,13 +1229,17 @@ h1, h2, h3, h4, p {
   .quote .quote-icons-item-icon img {
     width: 80%;
   }
-  .quote .quote-icons-item-text {
+  .quote .quote-icons-item-text, .quote .quote-icons-item .size-text, .quote .quote-icons-item .extras-text {
     padding: 10px;
+    margin: 5px 0;
     background-color: #010b20;
     color: white;
     border-radius: 10px;
     opacity: 0;
     transition: .6s;
+  }
+  .quote .quote-icons-item .extras-text {
+    opacity: 1;
   }
   .quote .quote-icons-item:nth-child(2) img {
     width: 65%;

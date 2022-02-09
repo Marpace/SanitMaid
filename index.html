@@ -176,11 +176,12 @@
       </div>
       <div class="quote-form">
         <form action="">
-          <div class="quote-form-item open">
+          <div class="quote-form-item open fade-in">
             <div class="quote-form-item-title">
+              <img src="images/quote-icon-1.png" alt="">
               <h2>Type of cleaning</h2>
             </div>
-            <div class="quote-form-item-wrap" >
+            <div class="quote-form-item-wrap" style="display: block;" >
               <div  class="quote-form-item-header">
                 <p>Please chose which type of cleaning you would like</p>
               </div>
@@ -195,10 +196,12 @@
                 <label for="cleaning-option-4" >Sanitation</label>
               </div>
               <div class="quote-form-item-button">Next</button></div>
+              <div class="validation-alert">Please select an option to continue</div>
             </div>
           </div>
           <div class="quote-form-item">
             <div class="quote-form-item-title">
+              <img src="images/quote-icon-2.png" alt="">
               <h2>Bedrooms</h2>
             </div>
             <div class="quote-form-item-wrap">
@@ -220,10 +223,12 @@
                 <label for="bedroom-option-6" >5</label>
               </div>
               <div class="quote-form-item-button">Next</div>
+              <div class="validation-alert">Please select an option to continue</div>
             </div>
           </div>
           <div class="quote-form-item">
             <div class="quote-form-item-title">
+              <img src="images/quote-icon-3.png" alt="">
               <h2>Bathrooms</h2>
             </div>
             <div class="quote-form-item-wrap">
@@ -243,10 +248,14 @@
                 <label for="bathroom-option-5" >5</label>
               </div>
               <div id="bath-next-btn" class="quote-form-item-button">Next</div>
+              <div class="validation-alert">Please select an option to continue</div>
             </div>
           </div>
           <div class="quote-form-item">
-            <div class="quote-form-item-title"><h2>ft&sup2;</h2></div>
+            <div class="quote-form-item-title">
+              <img src="images/quote-icon-4.png" alt="">
+              <h2>ft&sup2;</h2>
+            </div>
             <div class="quote-form-item-wrap">
               <div class="quote-form-item-header">
                 <p>Please provide property size</p>
@@ -255,30 +264,40 @@
                 <input id="size-input" type="text" autocomplete="off">
                 <h3>ft&sup2;</h3>
               </div>
-              <div class="quote-form-item-button">Next</div>
+              <div class="size-button">Next</div>
+              <div class="validation-alert">Please enter property size to continue</div>
             </div>
           </div>
           <div class="quote-form-item">
-            <div class="quote-form-item-title"><h2>Extras</h2></div>
+            <div class="quote-form-item-title">
+              <img src="images/quote-icon-5.png" alt="">
+              <div>
+                <h2>Extras</h2>
+              </div>
+            </div>
             <div class="quote-form-item-wrap">
               <div class="quote-form-item-header">
                 <p>Which extras would you like to add?</p>
               </div>
               <div id="extras-options" class="quote-form-item-options">
-                <input type="radio" name="extras" id="extras-option-1">
+                <input class="extras-input" type="checkbox" name="extras" id="extras-option-1">
                 <label for="extras-option-1" >Inside oven</label>
-                <input type="radio" name="extras" id="extras-option-2">
+                <input class="extras-input" type="checkbox" name="extras" id="extras-option-2">
                 <label for="extras-option-2" >Inside refrigirator</label>
-                <input type="radio" name="extras" id="extras-option-3">
+                <input class="extras-input" type="checkbox" name="extras" id="extras-option-3">
                 <label for="extras-option-3" >Inside windows</label>
-                <input type="radio" name="extras" id="extras-option-4">
+                <input class="extras-input" type="checkbox" name="extras" id="extras-option-4">
                 <label for="extras-option-4" >Matress cleaning</label>
               </div>
-              <div class="quote-form-item-button">Next</div>
+              <div class="extras-button">Next</div>
+              <div class="validation-alert">Please select an option to continue</div>
             </div>
           </div>
           <div class="quote-form-item">
-            <div class="quote-form-item-title"><h2>Frequency</h2></div>
+            <div class="quote-form-item-title">
+              <img src="images/quote-icon-6.png" alt="">
+              <h2>Frequency</h2>
+            </div>
             <div class="quote-form-item-wrap">
               <div class="quote-form-item-header">
                 <p>How often would you like the service?</p>
@@ -294,6 +313,7 @@
                 <label for="frequency-option-4" >One time</label>
               </div>
               <div class="quote-form-item-button">Next</div>
+              <div class="validation-alert">Please select an option to continue</div>
             </div>
           </div>
           <div class="quote-form-item quote-price">
@@ -327,13 +347,12 @@
           <div class="quote-icons-item-icon">
             <img src="images/quote-icon-4.png" alt="">
           </div>
-          <div class="quote-icons-item-text"></div>
+          <div class="size-text"></div>
         </div>
-        <div class="quote-icons-item">
+        <div class="quote-icons-item extras-icon-item">
           <div class="quote-icons-item-icon">
             <img src="images/quote-icon-5.png" alt="">
           </div>
-          <div class="quote-icons-item-text"></div>
         </div>
         <div class="quote-icons-item">
           <div class="quote-icons-item-icon">
