@@ -106,9 +106,10 @@
                 }
                 
                 .drop-down-menu {
-                    height: 0;
-                    overflow: hidden;
-                    transition: .5s;
+                    display: none;
+                    // height: 0;
+                    // overflow: hidden;
+                    // transition: .5s;
 
                     .drop-down-link {
                         @include flex_centered(row);
@@ -224,7 +225,6 @@
                         left: 50%;
                         transform: translateX(-50%);
                         width: 200px;
-                        height: 0;
                         background-color: $background_green;
                         border-radius: 10px;
     

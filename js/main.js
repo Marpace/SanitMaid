@@ -147,23 +147,8 @@ toggler.addEventListener("click", function(){
     toggleMenu();
 });
 
-// Drop down menu animation (only for screen width 599px or less)
-const toggleDropDownMenu = function() {
-    
-    if(getComputedStyle(dropDownMenu).height === "0px"){ 
-        if(window.screen.width <= 767){  
-            dropDownMenu.style.height = "265px";
-        } else if (window.screen.width >= 768) {
-            dropDownMenu.style.height = "200px";
-        }
-    } else {
-        dropDownMenu.style.height = "0px";
-    }
-    
-};
-
 dropDownTrigger.addEventListener("click", function(){
-    toggleDropDownMenu();
+    $(".drop-down-menu").slideToggle();
     console.log("clicked")
 });
 

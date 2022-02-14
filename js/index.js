@@ -167,44 +167,33 @@ const extrasButton = document.querySelector(".extras-button");
 const extrasInput = document.querySelectorAll(".extras-input");
 const extrasIconItem = document.querySelector(".extras-icon-item");
 
-
-let quoteIndex = 0;
-
-
 //slide content up and down when an option is clicked
+$(".quote-form-item-title").click(function(){
+    if($(this).next().css("display") === "block"){
+        $(this).next().slideToggle();
+        $(this).parent().toggleClass("open");
+    } else {
+        $(".quote-form-item-wrap").each(function(){
+            $(this).slideUp();
+            $(this).parent().removeClass("open");    
+        })
+        $(this).next().slideToggle();
+        $(this).parent().toggleClass("open");
+    }
+});
 
 
-// $(".quote-form-item-title").click(function(){
-//     $(this).next().slideToggle();
-//     $(this).parent().toggleClass("open");
-// });
+$("#size-options").parent().prev().click(function(){
+    $("#size-input").focus();
+});
 
-
-// $("#size-options").parent().prev().click(function(){
-//     $("#size-input").focus();
-// });
-
-
-// if (screen.width <= 767){
-//     $(".quote-form-item-button").click(function(){
-//         $(this).parent().slideToggle();
-//         $(this).parent().parent().next().children(".quote-form-item-wrap").slideToggle();
-//         $(this).parent().parent().toggleClass("open");
-//         $(this).parent().parent().next().toggleClass("open");
-//     });
-// }
-
-
-// Quote section functionality for screens 768px and bigger 
-
-
+// adding event listeners to the next buttons in the quote form
 quoteButtons.forEach(button => {
     button.addEventListener("click", function(){
         let index = quoteButtons.indexOf(this);
-        const selectedValues = document.querySelectorAll('input[type="radio"]:checked');
+        const selectedValue = $(this).prev().children("input:checked").next().html();
 
-        // const selectedValues = $('input[type="radio"]:checked');
-        if(selectedValues.length === (index + 1)){
+        if(selectedValue !== undefined){
             if(screen.width < 768){
                 $(this).parent().slideToggle();
                 $(this).parent().parent().next().children(".quote-form-item-wrap").slideToggle();
@@ -212,13 +201,12 @@ quoteButtons.forEach(button => {
                 $(this).parent().parent().next().toggleClass("open")
                 $(this).parent().prev().children("img").fadeIn(600, "linear")
                 this.parentElement.previousElementSibling.style.justifyContent = "space-between";
-                this.parentElement.previousElementSibling.children[1].innerHTML = selectedValues[index].nextElementSibling.innerHTML
-                console.log(selectedValues[index].nextElementSibling.innerHTML)
+                this.parentElement.previousElementSibling.children[1].innerHTML = selectedValue;
             } else {
                 quoteItems[index].classList.toggle("fade-in")
                 quoteItems[index + 1].classList.toggle("fade-in")
                 iconText[index].style.opacity = "1";
-                iconText[index].innerHTML = selectedValues[index].nextElementSibling.innerHTML;
+                iconText[index].innerHTML = selectedValue;
             }
             index += 1;
         } else {
@@ -287,4 +275,11 @@ extrasButton.addEventListener("click", function(){
         $(this).next().fadeIn(400, "linear")
     }
     
+    console.log(checkedItems)
+});
+
+//Event listener for book now button to display second part of quote form
+
+$(".quote-price-button").click(function(){
+    $(".hidden-form").fadeIn(600, "linear")
 });

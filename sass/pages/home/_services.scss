@@ -1,6 +1,10 @@
 .services {
     padding: 50px 0;
-    height: 95vh;
+    height: 700px;
+    margin: 50px 0;
+    @include responsive($desktop){
+        margin: 100px 0;
+    }
 
     &-title {
         text-align: center;
@@ -179,9 +183,6 @@
                 }
             }
         }
-    }
-    @include responsive($desktop){
-        height: 110vh;
     }
 }
 

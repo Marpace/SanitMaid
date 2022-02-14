@@ -1,14 +1,27 @@
-.button-light {
+button {
     width: 80%;
     max-width: 200px;
-    padding: 5px;
-    background: none;
-    border: 2px solid white;
+    padding: 10px;
+    border: 2px solid $logo_blue;
+    font-size: 16px;
+    margin: 0 10px;
+    transition: .3s;
     border-radius: 13px;
-    color: white;
-    font-size: 25px;
-    margin: 0 auto 20px;
 }
-.button-light:active{
-    background-color: rgb(172, 171, 171);
+.button-outline {
+    background: none;
+    color: black;
+}
+.button-outline:hover {
+    background-color: $logo_blue;
+    color: white;
+}
+.button-solid {
+    background-color: $logo_blue;
+    border: 2px solid $logo_blue;
+    color: white;
+}
+.button-solid:hover {
+    background: none;
+    color: black;
 }
