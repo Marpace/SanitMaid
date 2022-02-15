@@ -263,6 +263,7 @@ extrasButton.addEventListener("click", function(){
                     const newEl = document.createElement("h2");
                     newEl.innerHTML = input.nextElementSibling.innerHTML;
                     this.parentElement.previousElementSibling.children[1].appendChild(newEl);
+                    console.log(input.nextElementSibling.innerHTML)
                 } else {
                     const newEl = document.createElement("div");
                     newEl.classList.add("extras-text");
@@ -275,11 +276,15 @@ extrasButton.addEventListener("click", function(){
         $(this).next().fadeIn(400, "linear")
     }
     
-    console.log(checkedItems)
 });
 
 //Event listener for book now button to display second part of quote form
 
 $(".quote-price-button").click(function(){
-    $(".hidden-form").fadeIn(600, "linear")
+
+    if(screen.width < 768){
+        $(".hidden-form").fadeIn(600, "linear")
+    } else {
+        $(".hidden-form").css("display", "flex");
+    }
 });

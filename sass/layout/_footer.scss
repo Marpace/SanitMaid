@@ -2,7 +2,6 @@
     position: relative;
     background-color: $logo_blue;
     @include flex_centered(column);
-    margin-top: 130px;
     padding-top: 50px;
 
     .footer-top {

@@ -1,8 +1,10 @@
 .quote {
+    margin-bottom: 130px;
     &-title {
-        text-align: left;
         h2 {
-            max-width: 90%
+            text-align: left;
+            max-width: 80%;
+            max-width: 500px;
         }
     }
     &-form {
@@ -136,10 +138,12 @@
     }
 
     .hidden-form {
+        width: 90%;
         display: none;
         &-title {
-            width: 90%;
-            margin: 100px auto 50px;
+            width: 100%;
+            max-width: 500px;
+            margin: 100px auto 40px;
 
             h2 {
                 color: black;
@@ -148,9 +152,11 @@
         }
         &-wrap {
             background-color: $logo_blue;
-            width: 90%;
+            width: 100%;
+            max-width: 500px;
             padding: 20px;
             text-align: center;
+            margin: auto;
 
             input, textarea {
                 background: none;
@@ -188,16 +194,27 @@
 // --------------------- MEDIA QUERIES ----------------------
 
     @include responsive($tablet_large) {
+       height: 800px;
+        .quote-title {
+            h2{
+                width: 90%;
+                max-width: 700px;
+            }
+        }
         .quote-form{
             form {
                 position: relative;
-                height: 250px;
+                height: 350px;
+                margin: 0 0 100px 0;
                 .quote-form-item-title {
                     display: none;
                 }
+               
                 .quote-form-item {
                     position: absolute;
+                    top: 50px;
                     opacity: 0;
+                    width: 90%;
                     max-width: 700px;
                     border-radius: 20px;
                     padding: 20px;
@@ -223,50 +240,108 @@
                 .quote-form-item:first-child {
                     width: 700px;
                 }
+                .quote-price{
+                    div:first-child {
+                        display: block;
+                    }
+                }
                 .fade-in {
                     opacity: 1;
                     z-index: 10;
                 }      
-            }
-        }
-        .quote-icons {
-            @include flex_centered(row);
-            justify-content: space-between;
-            width: 80%;
-            max-width: 900px;
-            margin: 0 auto 100px;
-
-            &-item {
-                @include flex_centered(column);
-                justify-content: space-between;
-                height: 100px;
-
-                &-icon {
-                    min-height: 50px;
-                    width: 50px;
-                    background-color: $logo_blue;
-                    border-radius: 10px;
+                .quote-icons {
                     @include flex_centered(row);
-
-                    img {
-                        width: 80%;
+                    justify-content: space-between;
+                    width: 80%;
+                    max-width: 900px;
+                    padding-top: 550px;
+        
+                    &-item {
+                        @include flex_centered(column);
+                        justify-content: space-between;
+                        height: 100px;
+        
+                        &-icon {
+                            min-height: 50px;
+                            width: 50px;
+                            background-color: $logo_blue;
+                            border-radius: 10px;
+                            @include flex_centered(row);
+        
+                            img {
+                                width: 80%;
+                            }
+                        }
+                        &-text, .size-text, .extras-text {
+                            padding: 10px;
+                            margin: 5px 0;
+                            background-color: $logo_blue;
+                            color: white;
+                            border-radius: 10px;
+                            opacity: 0;
+                            transition: .6s;
+                        }
+                        .extras-text {
+                            opacity: 1;
+                        }
+                    }
+                    &-item:nth-child(2) img {
+                        width: 65%;
                     }
                 }
-                &-text, .size-text, .extras-text {
-                    padding: 10px;
-                    margin: 5px 0;
-                    background-color: $logo_blue;
-                    color: white;
-                    border-radius: 10px;
-                    opacity: 0;
-                    transition: .6s;
+                .hidden-form {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    padding: 100px;
+                    @include flex_centered(column);
+                    justify-content: flex-start;
+                    background-color: rgba(255, 255, 255, .8);
+                    z-index: 3000;
+                    overflow: scroll;
+                    display: none;
+                    
+                    &-top {
+                        width: 100%;
+                        max-width: 600px;
+                        display: flex;
+                        justify-content: end;
+
+                        &-btn {
+                            position: relative;
+                            height: 50px;
+                            width: 50px;
+                            div{
+                                position: absolute;
+                                top: 20px;
+                                height: 5px;
+                                width: 100%;
+                                border-radius: 5px;
+                                background-color: black;
+                                transform: rotate(45deg);
+                            }
+                            div:last-child {
+                                transform: rotate(-45deg);
+                            }
+                        }
+                    }
+                    &-title {
+                        background-color: $logo_blue;
+                        margin: 0 0 -1px 0;
+                        max-width: 600px;
+                        padding: 20px;
+                        h2{
+                            color: white;
+                            font-size: 25px;
+                        }
+                    }
+                    &-wrap {
+                        max-width: 600px;
+                        margin: 0;
+                    }
                 }
-                .extras-text {
-                    opacity: 1;
-                }
-            }
-            &-item:nth-child(2) img {
-                width: 65%;
             }
         }
     }
