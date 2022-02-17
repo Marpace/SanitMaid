@@ -136,7 +136,7 @@ const toggleMenu = function(){
         }
         
         // Drop down collapse animation
-        dropDownMenu.style.height = "0px"
+        // dropDownMenu.style.height = "0px"
 
         isVisible = false;
     }
@@ -147,8 +147,10 @@ toggler.addEventListener("click", function(){
     toggleMenu();
 });
 
-dropDownTrigger.addEventListener("click", function(){
-    $(".drop-down-menu").slideToggle();
-    console.log("clicked")
-});
+
+// Drop down menu animation
+// dropDownTrigger.addEventListener("click", function(){
+//     $(".drop-down-menu").slideToggle();
+//     console.log("clicked")
+// });
 

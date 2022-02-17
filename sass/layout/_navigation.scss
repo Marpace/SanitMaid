@@ -17,7 +17,7 @@
         z-index: 110;
         .nav-brand-c {
             height: 60px;
-            width: 180px;
+            width: 60px;
             @include flex_centered(row);
             justify-content: flex-start;
             transition: .8s;

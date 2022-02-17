@@ -281,10 +281,5 @@ extrasButton.addEventListener("click", function(){
 //Event listener for book now button to display second part of quote form
 
 $(".quote-price-button").click(function(){
-
-    if(screen.width < 768){
-        $(".hidden-form").fadeIn(600, "linear")
-    } else {
-        $(".hidden-form").css("display", "flex");
-    }
+    $(".hidden-form").fadeIn(600, "linear")
 });

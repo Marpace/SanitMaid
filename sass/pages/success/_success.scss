@@ -1,7 +1,40 @@
 .success-wrap {
-    // background-image: url("../images/ripples 3.jpg");
+    // height: 600px;
+    background-color: white;
+    background-image: url("../images/success-bg.jpeg");
+    background-size: 150% 50%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    @include responsive($tablet){
+        background-size: 100% 50%;
+        padding-bottom: 100px;
+    }
+    @include responsive($tablet_large){
+        background-size: 100% 60%;
+        padding-bottom: 200px;
+    }
+    @include responsive($desktop){
+        background-size: 100% 65%;
+        padding-bottom: 200px;
+    }
+    @include responsive($desktop_large){
+        background-size: 100% 80%;
+        padding-bottom: 300px;
+    }
     .success-header {
-        padding: 200px 20px;
+        padding: 150px 20px 300px;
+        @include responsive($tablet_large){
+            padding: 150px 50px 300px;
+        }
+        @include responsive($desktop){
+            padding: 150px 100px 300px;
+        }
+        @include responsive($desktop_large){
+            padding: 150px 200px 300px;
+        }
+        @include responsive($desktop_xl){
+            padding: 150px 300px 300px;
+        }
         h1 {
             font-size: 35px;
             font-weight: 900;
@@ -9,6 +42,11 @@
         }
         p {
             font-size: 23px;
+        }
+        button {
+            margin: 20px 0;
+            font-size: 20px;
+            background-color: white;
         }
     }
 }

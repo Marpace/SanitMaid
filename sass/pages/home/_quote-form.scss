@@ -3,7 +3,7 @@
     &-title {
         h2 {
             text-align: left;
-            max-width: 80%;
+            width: 90%;
             max-width: 500px;
         }
     }
@@ -197,6 +197,7 @@
        height: 800px;
         .quote-title {
             h2{
+                text-align: center;
                 width: 90%;
                 max-width: 700px;
             }
@@ -308,6 +309,7 @@
                         max-width: 600px;
                         display: flex;
                         justify-content: end;
+                        margin: auto;
 
                         &-btn {
                             position: relative;
@@ -329,7 +331,7 @@
                     }
                     &-title {
                         background-color: $logo_blue;
-                        margin: 0 0 -1px 0;
+                        margin: auto;
                         max-width: 600px;
                         padding: 20px;
                         h2{
@@ -339,7 +341,7 @@
                     }
                     &-wrap {
                         max-width: 600px;
-                        margin: 0;
+                        margin: auto;
                     }
                 }
             }
