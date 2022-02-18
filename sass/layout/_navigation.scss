@@ -17,20 +17,13 @@
         z-index: 110;
         .nav-brand-c {
             height: 60px;
-            width: 60px;
+            width: 140px;
             @include flex_centered(row);
             justify-content: flex-start;
             transition: .8s;
 
-            h2 {
-                transition: .8s;
-            }
-
             img {
                 width: 100%;
-            }
-            img:last-child {
-                display: none;
             }
         }
         .navbar-toggler-c {
@@ -163,13 +156,10 @@
             .nav-brand-c {
                 @include flex_centered(row);
                 justify-content: flex-start;
+                width: 240px;
     
                 img {
                     width: 100%;
-                }
-                img:last-child {
-                    display: block;
-                    width: 250%;
                 }
             }
             .navbar-toggler-c {

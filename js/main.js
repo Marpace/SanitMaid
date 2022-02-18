@@ -39,22 +39,21 @@ body.addEventListener("scroll", function() {
         } else if(screen.width >= 768) {
             navWrap.style.backgroundColor = "rgb(1, 11, 32)";
             navBar.style.height = "80px";
-            dropDownIcon.style.color = "white";
+            // dropDownIcon.style.color = "white";
             currentPageUnderline.style.borderBottom = "2px solid white";
-            navLogo.children[0].style.color = "white";
+            navLogo.style.width = "200px";
             navLinks.forEach(link => {
                 link.style.color = "white"
             });
-            
         } 
     } else {
         if(screen.width >= 768) {
             navLinks.forEach(link => {
                 link.style.color = "rgb(1, 11, 32)";
             });
-            navLogo.children[0].style.color = "black";
+            navLogo.style.width = "250px";
             currentPageUnderline.style.borderBottom = "2px solid black";
-            dropDownIcon.style.color = "black"
+            // dropDownIcon.style.color = "black"
         }
         navBar.style.height = "100px"
         navWrap.style.backgroundColor = "";

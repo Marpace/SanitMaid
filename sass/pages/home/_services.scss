@@ -62,7 +62,7 @@
                 width: 120%;
                 height: 100%;
                 z-index: 20;
-                background-color: $background_green;
+                background-color: white;
             }
             @include responsive($tablet_large) {
                 .mobile-image {
@@ -126,7 +126,7 @@
         }
         &-info {
             position: relative;
-            height: 170px;
+            height: 230px;
             margin: auto;
 
             .item-active-c {
@@ -150,7 +150,7 @@
 
                     p {
                         font-weight: 500;
-                        font-size: 14px;
+                        font-size: 18px;
                     }
                 }
             }

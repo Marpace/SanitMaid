@@ -1,0 +1,54 @@
+.home-info {
+   padding: 30px 5%;
+   margin: 150px 0 100px;
+   background-color: #05696F;
+//    border: 2px solid $logo_blue;
+   @include flex_centered(column);
+
+   p {
+       max-width: 500px;
+       font-size: 20px;
+       font-weight: 500;
+       color: white;
+   }
+   &-button {
+       width: 100%;
+       max-width: 500px;
+       button {
+           margin: 20px 0 0 0;
+           align-self: flex-start;
+       }
+   }
+
+   @include responsive($tablet_large){
+       margin: 150px 50px 100px;
+       border-radius: 10px;
+       box-shadow: 4px 4px 20px -5px $logo_blue;
+       background: 
+    //    background-image: linear-gradient(to right, $dark_green, #05696F, $dark_green);
+
+       p {
+           text-align: center;
+           font-size: 23px;
+           max-width: 85%;
+       }
+       &-button {
+           @include flex_centered(row);
+
+           button {
+               font-size: 21px;
+           }
+        }
+
+   }
+   @include responsive($desktop){
+       margin: 150px 100px 100px;
+   }
+   @include responsive($desktop_large){
+       margin: 150px 200px 100px;
+   }
+   @include responsive($desktop_xl){
+       margin: 150px 300px 100px;
+   }
+
+}
