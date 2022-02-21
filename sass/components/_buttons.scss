@@ -1,11 +1,11 @@
 button {
     width: 80%;
     max-width: 200px;
-    padding: 10px;
-    border: 2px solid $logo_blue;
+    padding: 5px 20px;
+    border: 1px solid $logo_blue;
     font-size: 16px;
     transition: .3s;
-    border-radius: 13px;
+    border-radius: 9px;
 }
 .button-outline {
     background: none;
@@ -17,7 +17,7 @@ button {
 }
 .button-solid {
     background-color: $logo_blue;
-    border: 2px solid $logo_blue;
+    border: 1px solid $logo_blue;
     color: white;
 }
 .button-solid:hover {

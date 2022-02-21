@@ -34,11 +34,24 @@
             font-size: 2rem;
             font-weight: 600;
         }
-        .button-outline {
+        .header-buttons {
             width: 100%;
-        }
-        .button-solid {
-            display: none;
+            display: flex;
+            justify-content: space-between;
+
+            a {
+                flex-basis: 70%;
+                margin: 0 10px;
+            }
+            button {
+                font-weight: 500;
+            }
+            .button-outline {
+                width: 100%;
+            }
+            .button-solid {
+                display: none;
+            }
         }
     }
     .gradient {
@@ -139,6 +152,9 @@
                 justify-content: space-between;
                 width: 100%;
 
+                button {
+                    flex-basis: 48%;
+                }
                 .button-solid {
                     display: block;
                 }

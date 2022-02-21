@@ -17,15 +17,18 @@
        button {
            margin: 20px 0 0 0;
            align-self: flex-start;
-       }
+           a {
+            color: white;
+            }
+        }
    }
 
    @include responsive($tablet_large){
-       margin: 150px 50px 100px;
+       margin: 250px 50px 100px;
        border-radius: 10px;
-       box-shadow: 4px 4px 20px -5px $logo_blue;
-       background: 
-    //    background-image: linear-gradient(to right, $dark_green, #05696F, $dark_green);
+       box-shadow: 0 4px 15px -5px $logo_blue;
+       background-image: linear-gradient(to right, $dark_green, #05696F, $dark_green);
+    // background-color: white;
 
        p {
            text-align: center;
@@ -38,17 +41,20 @@
            button {
                font-size: 21px;
            }
+           button:hover a{
+               color: $logo_blue;
+           }
         }
 
    }
    @include responsive($desktop){
-       margin: 150px 100px 100px;
+       margin: 250px 100px 100px;
    }
    @include responsive($desktop_large){
-       margin: 150px 200px 100px;
+       margin: 250px 200px 100px;
    }
    @include responsive($desktop_xl){
-       margin: 150px 300px 100px;
+       margin: 250px 300px 100px;
    }
 
 }

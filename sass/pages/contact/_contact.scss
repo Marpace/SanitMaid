@@ -1,0 +1,45 @@
+.contact {
+    padding: 100px 20px 250px;
+    height: fit-content;
+    background-image: url("../images/services-bg.jpg");
+    background-position: center bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #f8faf9;
+
+    @include responsive($tablet){
+        padding: 100px 50px 300px;
+    }
+    @include responsive($tablet_large){
+        padding: 100px 50px 350px;
+    }
+    @include responsive($desktop){
+        padding: 100px 100px 450px;
+    }
+    @include responsive($desktop_large){
+        padding: 100px 200px 450px;
+        background-position: 0 400px;
+    }
+    @include responsive($desktop_xl){
+        padding: 100px 300px 450px;
+        background-position: 0 250px;
+    }
+
+    h1{
+        margin: 0 0  30px 0;
+    }
+    .contact-form {
+        margin: auto;
+        
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        #message {
+            height: 150px;
+        }
+    }
+
+
+}

@@ -1,5 +1,5 @@
 .about-header {
-    padding: 130px 20px;
+    padding: 130px 20px 0;
     @include flex_centered(column-reverse);
     justify-content: space-between;
 
@@ -19,20 +19,23 @@
             width: 100%;
             height: 80%;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 10px;
             margin-bottom: 20px;
         }
     }
+    @include responsive($tablet_large){
+        padding: 130px 50px 20px;
+    }
     @include responsive($desktop){
-        padding: 130px 50px;
+        padding: 130px 100px 20px;
         @include responsive($desktop_large){
-            padding: 130px 100px;
+            padding: 130px 200px 20px;
         }
         @include responsive($desktop_xl){
-            padding: 130px 200px;
+            padding: 130px 300px 20px;
         }
         flex-direction: row;
-        height: 120vh;
+        height: 100vh;
         align-items: flex-start;
 
         &-text {
@@ -41,7 +44,7 @@
                 font-size: 40px;
             }
             p{
-                font-size: 20px;
+                font-size: 25px;
             }
         }
         &-img {

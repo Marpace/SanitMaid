@@ -1,8 +1,9 @@
 .quote {
     margin-bottom: 130px;
+    padding-top: 100px;
     &-title {
         h2 {
-            text-align: left;
+            text-align: center;
             width: 90%;
             max-width: 500px;
         }
@@ -26,6 +27,7 @@
             width: 80%;
             max-width: 500px;
             transition: .7s;
+            box-shadow: 2px 6px 8px 0 rgba(0,0,0,0.5);
            
            &-wrap {
                display: none;

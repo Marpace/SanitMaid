@@ -9,6 +9,9 @@
 @import "layout/navigation";
 @import "layout/footer";
 
+
+
+// Pages 
 @import "pages/home/header";
 @import "pages/home/services";
 @import "pages/home/home-info";
@@ -21,4 +24,6 @@
 @import "pages/about/about-header";
 @import "pages/about/info";
 
+@import "pages/contact/contact";
 
+@import "pages/booking/booking-form";

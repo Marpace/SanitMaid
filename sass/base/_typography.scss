@@ -5,6 +5,10 @@ body {
 a {
     text-decoration: none;
     color: black;
+    width: 100%;
+}
+a:visited {
+    color: inherit;
 }
 
 h1, h2, h3, h4, p {

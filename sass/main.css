@@ -25,6 +25,11 @@ body {
 a {
   text-decoration: none;
   color: black;
+  width: 100%;
+}
+
+a:visited {
+  color: inherit;
 }
 
 h1, h2, h3, h4, p {
@@ -53,11 +58,11 @@ h1, h2, h3, h4, p {
 button {
   width: 80%;
   max-width: 200px;
-  padding: 10px;
-  border: 2px solid #010b20;
+  padding: 5px 20px;
+  border: 1px solid #010b20;
   font-size: 16px;
   transition: .3s;
-  border-radius: 13px;
+  border-radius: 9px;
 }
 
 .button-outline {
@@ -72,7 +77,7 @@ button {
 
 .button-solid {
   background-color: #010b20;
-  border: 2px solid #010b20;
+  border: 1px solid #010b20;
   color: white;
 }
 
@@ -284,7 +289,7 @@ button {
     justify-content: center;
     align-items: center;
     justify-content: flex-start;
-    width: 240px;
+    width: 230px;
   }
   .nav-wrap-c .navbar-c .nav-brand-c img {
     width: 100%;
@@ -329,7 +334,7 @@ button {
   .nav-wrap-c .collapsed-nav-c .nav-links-c .nav-link-c a {
     color: black;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
   }
   .nav-wrap-c .collapsed-nav-c .nav-links-c #services-drop-down {
     display: flex;
@@ -652,11 +657,26 @@ button {
   font-weight: 600;
 }
 
-.header .header-text .button-outline {
+.header .header-text .header-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .header-text .header-buttons a {
+  flex-basis: 70%;
+  margin: 0 10px;
+}
+
+.header .header-text .header-buttons button {
+  font-weight: 500;
+}
+
+.header .header-text .header-buttons .button-outline {
   width: 100%;
 }
 
-.header .header-text .button-solid {
+.header .header-text .header-buttons .button-solid {
   display: none;
 }
 
@@ -795,6 +815,9 @@ button {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
+  .header .header-text .header-buttons button {
+    flex-basis: 48%;
   }
   .header .header-text .header-buttons .button-solid {
     display: block;
@@ -980,6 +1003,10 @@ button {
   font-size: 18px;
 }
 
+.services-carousel-info-item a {
+  text-align: center;
+}
+
 .services-carousel-controls {
   display: flex;
   flex-direction: row;
@@ -1044,15 +1071,21 @@ button {
   align-self: flex-start;
 }
 
+.home-info-button button a {
+  color: white;
+}
+
 @media only screen and (min-width: 768px) {
   .home-info {
-    margin: 150px 50px 100px;
+    margin: 250px 50px 100px;
     border-radius: 10px;
-    box-shadow: 4px 4px 20px -5px #010b20;
-    background: p;
-    background-text-align: center;
-    background-font-size: 23px;
-    background-max-width: 85%;
+    box-shadow: 0 4px 15px -5px #010b20;
+    background-image: linear-gradient(to right, #354B46, #05696F, #354B46);
+  }
+  .home-info p {
+    text-align: center;
+    font-size: 23px;
+    max-width: 85%;
   }
   .home-info-button {
     display: flex;
@@ -1063,32 +1096,36 @@ button {
   .home-info-button button {
     font-size: 21px;
   }
+  .home-info-button button:hover a {
+    color: #010b20;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   .home-info {
-    margin: 150px 100px 100px;
+    margin: 250px 100px 100px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .home-info {
-    margin: 150px 200px 100px;
+    margin: 250px 200px 100px;
   }
 }
 
 @media only screen and (min-width: 1450px) {
   .home-info {
-    margin: 150px 300px 100px;
+    margin: 250px 300px 100px;
   }
 }
 
 .quote {
   margin-bottom: 130px;
+  padding-top: 100px;
 }
 
 .quote-title h2 {
-  text-align: left;
+  text-align: center;
   width: 90%;
   max-width: 500px;
 }
@@ -1121,6 +1158,7 @@ button {
   width: 80%;
   max-width: 500px;
   transition: .7s;
+  box-shadow: 2px 6px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 .quote-form-item-wrap {
@@ -1658,6 +1696,7 @@ button {
   font-size: 45px;
   font-weight: 500;
   margin: 0;
+  cursor: pointer;
 }
 
 .cleaning .accordion-item-content {
@@ -1696,7 +1735,7 @@ button {
 }
 
 .about-header {
-  padding: 130px 20px;
+  padding: 130px 20px 0;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
@@ -1722,28 +1761,34 @@ button {
   width: 100%;
   height: 80%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-header {
+    padding: 130px 50px 20px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   .about-header {
-    padding: 130px 50px;
+    padding: 130px 100px 20px;
     flex-direction: row;
-    height: 120vh;
+    height: 100vh;
     align-items: flex-start;
   }
 }
 
 @media only screen and (min-width: 992px) and (min-width: 1200px) {
   .about-header {
-    padding: 130px 100px;
+    padding: 130px 200px 20px;
   }
 }
 
 @media only screen and (min-width: 992px) and (min-width: 1450px) {
   .about-header {
-    padding: 130px 200px;
+    padding: 130px 300px 20px;
   }
 }
 
@@ -1755,7 +1800,7 @@ button {
     font-size: 40px;
   }
   .about-header-text p {
-    font-size: 20px;
+    font-size: 25px;
   }
   .about-header-img {
     flex-basis: 45%;
@@ -1765,9 +1810,171 @@ button {
 .info {
   height: fit-content;
   margin: 0 0 200px 0;
-  padding: 0 20px;
+  padding: 80px 20px 0;
 }
 
-.info p {
+.info-title {
+  margin: 0 0 50px 0;
+}
+
+.info-title h1 {
+  margin: 0;
+}
+
+@media only screen and (min-width: 992px) {
+  .info-title h1 {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+.info-item {
+  width: 100%;
+  margin: 50px 0;
+}
+
+.info-item-text {
+  flex-basis: 50%;
+}
+
+.info-item-text h2 {
+  margin: 10px 0;
+  max-width: 100%;
+}
+
+.info-item-text p {
   font-size: 18px;
+}
+
+.info-item-img {
+  width: 100%;
+  height: 20rem;
+  margin: 20px 0;
+  flex-basis: 45%;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: 60% 0;
+}
+
+.info-item #info-img-1 {
+  background-image: url("../images/about/info-img-1.jpg");
+}
+
+.info-item #info-img-2 {
+  background-image: url("../images/about/info-img-2.jpg");
+  background-size: 100% 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  .info-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .info-item p {
+    font-size: 23px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .info {
+    padding: 80px 50px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .info {
+    padding: 80px 100px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .info {
+    padding: 80px 200px;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .info {
+    padding: 80px 300px;
+  }
+}
+
+.contact {
+  padding: 100px 20px 250px;
+  height: fit-content;
+  background-image: url("../images/services-bg.jpg");
+  background-position: center bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #f8faf9;
+}
+
+@media only screen and (min-width: 600px) {
+  .contact {
+    padding: 100px 50px 300px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .contact {
+    padding: 100px 50px 350px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .contact {
+    padding: 100px 100px 450px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .contact {
+    padding: 100px 200px 450px;
+    background-position: 0 400px;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .contact {
+    padding: 100px 300px 450px;
+    background-position: 0 250px;
+  }
+}
+
+.contact h1 {
+  margin: 0 0  30px 0;
+}
+
+.contact .contact-form {
+  margin: auto;
+}
+
+.contact .contact-form input[type=number]::-webkit-inner-spin-button,
+.contact .contact-form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.contact .contact-form #message {
+  height: 150px;
+}
+
+.quote h1 {
+  text-align: center;
+}
+
+.quote .step {
+  margin: 50px auto 0;
+  width: 90%;
+}
+
+.quote .step .hr {
+  margin: 5px 0 20px;
+  width: 100%;
+  height: 1px;
+  background-color: black;
 }
