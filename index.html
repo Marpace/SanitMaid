@@ -208,7 +208,7 @@
                   <p>Please chose which type of cleaning you would like</p>
                 </div>
                 <div id="cleaning-options" class="quote-form-item-options">
-                  <input type="radio" name="Cleaning-type" id="cleaning-option-1"  value="Regular">
+                  <input type="radio" name="Cleaning-type" id="cleaning-option-1"  value="Regular" required>
                   <label for="cleaning-option-1" >Regular</label>
                   <input type="radio" name="Cleaning-type" id="cleaning-option-2" value="In-depth">
                   <label for="cleaning-option-2" >In-depth</label>
@@ -231,7 +231,7 @@
                   <p>How many bedrooms?</p>
                 </div>
                 <div id="bedrooms-options" class="quote-form-item-options" >
-                  <input type="radio" name="Bedrooms" id="bedroom-option-1" value="Studio">
+                  <input type="radio" name="Bedrooms" id="bedroom-option-1" value="Studio" required>
                   <label for="bedroom-option-1" >Studio</label>
                   <input type="radio" name="Bedrooms" id="bedroom-option-2" value="1">
                   <label for="bedroom-option-2" >1</label>
@@ -258,7 +258,7 @@
                   <p>How many bathrooms?</p>
                 </div>
                 <div id="bathrooms-options" class="quote-form-item-options">
-                  <input type="radio" name="Bathrooms" id="bathroom-option-1" value="1">
+                  <input type="radio" name="Bathrooms" id="bathroom-option-1" value="1" required>
                   <label for="bathroom-option-1" >1</label>
                   <input type="radio" name="Bathrooms" id="bathroom-option-2" value="2">
                   <label for="bathroom-option-2" >2</label>
@@ -283,7 +283,7 @@
                   <p>Please provide property size</p>
                 </div>
                 <div id="size-options" class="quote-form-item-options">
-                  <input id="size-input" type="number" name="Size" autocomplete="off">
+                  <input id="size-input" type="number" name="Size" autocomplete="off" required>
                   <h3>ft&sup2;</h3>
                 </div>
                 <div class="size-button">Next</div>
@@ -325,7 +325,7 @@
                   <p>How often would you like the service?</p>
                 </div>
                 <div id="frequency-options" class="quote-form-item-options">
-                  <input type="radio" name="Frequency" id="frequency-option-1" value="Monthly">
+                  <input type="radio" name="Frequency" id="frequency-option-1" value="Monthly" required>
                   <label for="frequency-option-1" >Monthly</label>
                   <input type="radio" name="Frequency" id="frequency-option-2" value="Bi-weekly">
                   <label for="frequency-option-2" >Bi-weekly</label>
@@ -351,7 +351,7 @@
           <div class="quote-icons-item-icon">
             <img src="images/icons/quote-icon-1.png" alt="">
           </div>
-          <div class="quote-icons-item-text">Regular</div>
+          <div class="quote-icons-item-text"></div>
         </div>
         <div class="quote-icons-item">
           <div class="quote-icons-item-icon">
@@ -398,26 +398,26 @@
           <div class="hidden-form-wrap container">
             <div class="row g-2">
               <div class="form-floating mb-3 col-sm-6 ">
-                <input type="text" class="form-control" name="Name" id="name" placeholder="Name">
+                <input type="text" class="form-control" name="Name" id="name" placeholder="Name" required>
                 <label for="name">Name</label>
               </div>
               <div class="form-floating mb-3 col-sm-6">
-                <input type="text" class="form-control" name="Lastname" id="lastname" placeholder="Lastname">
+                <input type="text" class="form-control" name="Lastname" id="lastname" placeholder="Lastname" required> 
                 <label for="lastName">Lastname</label>
               </div>
             </div>
             <div class="row g-2">
               <div class="form-floating mb-3 col-sm-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                 <label for="email">E-mail</label>
               </div>
               <div class="form-floating mb-3 col-sm-6">
-                <input type="number" class="form-control" name="Phone" id="phone" placeholder="Phone">
+                <input type="number" class="form-control" name="Phone" id="phone" placeholder="Phone" required>
                 <label for="phone">Phone number</label>
               </div>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" name="Address" id="address" placeholder="Address">
+              <input type="text" class="form-control" name="Address" id="address" placeholder="Address" required>
               <label for="address">Address</label>
             </div>
             <div class="row g-2">
@@ -426,16 +426,16 @@
                 <label for="unit">Apt number</label>
               </div>
               <div class="form-floating mb-3 col-sm-6">
-                <input type="text" class="form-control" name="Postal" id="postal" placeholder="Postal">
+                <input type="text" class="form-control" name="Postal" id="postal" placeholder="Postal" required>
                 <label for="postal">Postal code</label>
               </div>
             </div>   
             <div class="form-floating mb-3">
-              <input type="date" class="form-control" name="Date" id="date" placeholder="Date">
+              <input type="date" class="form-control" name="Date" id="date" placeholder="Date" required>
               <label for="date">Date</label>
             </div> 
             <div class="form-floating mb-3">
-              <textarea class="form-control" id="instructions" name="Instructions" placeholder="Special instructions" rows="3" ></textarea>
+              <textarea class="form-control" id="instructions" name="Instructions" placeholder="Special instructions" rows="3"></textarea>
               <label for="instructions">Special instructions or requests</label>
             </div> 
             <button type="submit">Submit booking</button>
@@ -448,7 +448,7 @@
     <section class="footer">
       <div class="footer-top">
         <h2>Make the best choice for your home</h2>
-        <button class="button-outline">BOOK NOW</button>
+        <a href="booking.html"><button class="button-outline">BOOK NOW</button></a>
       </div>
       <div class="footer-section footer-about">
         <div class="footer-section-title">

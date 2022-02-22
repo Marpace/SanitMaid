@@ -62,6 +62,7 @@ button {
   padding: 5px 20px;
   border: 1px solid #010b20;
   font-size: 16px;
+  font-family: "Montserrat", sans-serif;
   transition: .3s;
   border-radius: 9px;
 }
@@ -199,6 +200,10 @@ button {
   font-weight: 400;
   font-size: 30px;
   transition: .7s;
+}
+
+.nav-wrap-c .collapsed-nav-c .nav-links-c #booking-btn {
+  display: none;
 }
 
 .nav-wrap-c .collapsed-nav-c .nav-links-c #services-drop-down {
@@ -354,6 +359,9 @@ button {
     font-size: 16px;
     font-weight: 700;
   }
+  .nav-wrap-c .collapsed-nav-c .nav-links-c #booking-btn {
+    display: block;
+  }
   .nav-wrap-c .collapsed-nav-c .nav-links-c #services-drop-down {
     display: flex;
     flex-direction: column;
@@ -447,7 +455,12 @@ button {
   font-weight: 400;
 }
 
-.footer .footer-top button {
+.footer .footer-top a {
+  width: 150px;
+}
+
+.footer .footer-top a button {
+  width: 100%;
   max-width: 150px;
   font-size: 15px;
   margin: 0;

@@ -287,3 +287,4 @@ $(".quote-price-button").click(function(){
 $(".hidden-form-top-btn").click(function(){
     $(".hidden-form").fadeOut(600, "linear")
 });
+

@@ -84,6 +84,9 @@
                     transition: .7s;
                 }
             }
+            #booking-btn {
+                display: none
+            }
             #services-drop-down{
                 @include flex_centered(column);
                 align-items: flex-end;
@@ -200,6 +203,9 @@
                         font-size: 16px;
                         font-weight: 700;
                     }
+                }
+                #booking-btn {
+                    display: block;
                 }
                 #services-drop-down{
                     @include flex_centered(column);

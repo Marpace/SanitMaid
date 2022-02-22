@@ -24,12 +24,16 @@
             font-size: 18px;
             font-weight: 400;
         }
-        button {
-            max-width: 150px;
-            font-size: 15px;
-            margin: 0;
-            border: 2px solid white;
-            color: white;
+        a{
+            width: 150px;
+            button {
+                width: 100%;
+                max-width: 150px;
+                font-size: 15px;
+                margin: 0;
+                border: 2px solid white;
+                color: white;
+            }
         }
         @include responsive($desktop){
             height: 150px;
