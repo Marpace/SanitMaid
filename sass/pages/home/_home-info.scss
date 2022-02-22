@@ -1,7 +1,7 @@
 .home-info {
    padding: 30px 5%;
    margin: 150px 0 100px;
-   background-color: #05696F;
+   background-color: #005458;
 //    border: 2px solid $logo_blue;
    @include flex_centered(column);
 
@@ -27,7 +27,7 @@
        margin: 250px 50px 100px;
        border-radius: 10px;
        box-shadow: 0 4px 15px -5px $logo_blue;
-       background-image: linear-gradient(to right, $dark_green, #05696F, $dark_green);
+    //    background-image: linear-gradient(to right, $dark_green, #05696F, $dark_green);
     // background-color: white;
 
        p {

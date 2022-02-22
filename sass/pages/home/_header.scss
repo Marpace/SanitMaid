@@ -41,7 +41,6 @@
 
             a {
                 flex-basis: 70%;
-                margin: 0 10px;
             }
             button {
                 font-weight: 500;
@@ -49,7 +48,7 @@
             .button-outline {
                 width: 100%;
             }
-            .button-solid {
+            a:last-child{
                 display: none;
             }
         }
@@ -125,8 +124,31 @@
             }
         }
         .header-text {
-            width: 360px;
+            width: 380px;
             margin-right: 50px;
+            
+            h2 {
+                font-size: 1.8rem;
+                @include responsive($desktop){
+                    font-size: 2rem;
+                }
+            }
+            .header-buttons {
+                @include flex_centered(row);
+                justify-content: space-between;
+                width: 100%;
+                
+                a {
+                    flex-basis: 48%;
+
+                    button {
+                        width: 100%;
+                    }
+                }
+                a:last-child{
+                    display: block;
+                }
+            }
             @include responsive($desktop) {
                 left: 55%;
                 width: 430px;
@@ -139,25 +161,6 @@
             @include responsive($desktop_xl) {
                 left: 60%;
                 margin-right: 300px;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-                @include responsive($desktop){
-                    font-size: 2rem;
-                }
-            }
-            .header-buttons {
-                @include flex_centered(row);
-                justify-content: space-between;
-                width: 100%;
-
-                button {
-                    flex-basis: 48%;
-                }
-                .button-solid {
-                    display: block;
-                }
             }
         }
     }

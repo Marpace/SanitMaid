@@ -132,17 +132,21 @@
 }
 
 // *********************  MEDIA QUERIES  *******************
-
-@include responsive($tablet_large) {
+@include responsive($tablet_large){
+    .nav-wrap-c{
+        padding: 0 50px;
+        .navbar-c {
+            padding: 0;
+        }
+    }
+}
+@include responsive($desktop) {
 
     .nav-wrap-c {
         background-color: white;
         @include flex_centered(row);
-        padding: 0 50px;
+        padding: 0 100px;
         background: transparent;
-        @include responsive($desktop) {
-            padding: 0 100px;
-        }
         @include responsive($desktop_large){
             padding: 0 200px;
         }
@@ -156,7 +160,10 @@
             .nav-brand-c {
                 @include flex_centered(row);
                 justify-content: flex-start;
-                width: 230px;
+                width: 150px;
+                @include responsive($desktop_xl){
+                    width: 200px;
+                }
     
                 img {
                     width: 100%;

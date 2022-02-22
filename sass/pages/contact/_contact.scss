@@ -1,5 +1,5 @@
 .contact {
-    padding: 100px 20px 250px;
+    padding: 150px 20px 250px;
     height: fit-content;
     background-image: url("../images/services-bg.jpg");
     background-position: center bottom;
@@ -8,20 +8,20 @@
     background-color: #f8faf9;
 
     @include responsive($tablet){
-        padding: 100px 50px 300px;
+        padding: 150px 50px 300px;
     }
     @include responsive($tablet_large){
-        padding: 100px 50px 350px;
+        padding: 150px 50px 350px;
     }
     @include responsive($desktop){
-        padding: 100px 100px 450px;
+        padding: 150px 100px 450px;
     }
     @include responsive($desktop_large){
-        padding: 100px 200px 450px;
+        padding: 150px 200px 450px;
         background-position: 0 400px;
     }
     @include responsive($desktop_xl){
-        padding: 100px 300px 450px;
+        padding: 150px 300px 450px;
         background-position: 0 250px;
     }
 
@@ -31,6 +31,10 @@
     .contact-form {
         margin: auto;
         
+        input, textarea {
+            background: none;
+            border: 1px solid rgb(75, 75, 75);
+        }
         input[type=number]::-webkit-inner-spin-button, 
         input[type=number]::-webkit-outer-spin-button { 
             -webkit-appearance: none; 

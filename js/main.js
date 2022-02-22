@@ -41,17 +41,23 @@ body.addEventListener("scroll", function() {
             navBar.style.height = "80px";
             // dropDownIcon.style.color = "white";
             currentPageUnderline.style.borderBottom = "2px solid white";
-            navLogo.style.width = "200px";
+            $("#booking-btn").css({
+                "border": "1px solid white",
+                "color": "white"
+            });
             navLinks.forEach(link => {
                 link.style.color = "white"
             });
         } 
     } else {
         if(screen.width >= 768) {
+            $("#booking-btn").css({
+                "border": "1px solid rgb(1, 11, 32)",
+                "color": "rgb(1, 11, 32)"
+            });
             navLinks.forEach(link => {
                 link.style.color = "rgb(1, 11, 32)";
             });
-            navLogo.style.width = "250px";
             currentPageUnderline.style.borderBottom = "2px solid black";
             // dropDownIcon.style.color = "black"
         }

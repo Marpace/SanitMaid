@@ -11,6 +11,10 @@ button {
     background: none;
     color: black;
 }
+.button-outline-light {
+    color: white;
+    border: 1px solid white;
+}
 .button-outline:hover {
     background-color: $logo_blue;
     color: white;

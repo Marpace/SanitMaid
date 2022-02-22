@@ -12,6 +12,7 @@ html, body {
   overflow-x: hidden;
   font-weight: normal;
   font-style: normal;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -68,6 +69,11 @@ button {
 .button-outline {
   background: none;
   color: black;
+}
+
+.button-outline-light {
+  color: white;
+  border: 1px solid white;
 }
 
 .button-outline:hover {
@@ -251,35 +257,38 @@ button {
 
 @media only screen and (min-width: 768px) {
   .nav-wrap-c {
+    padding: 0 50px;
+  }
+  .nav-wrap-c .navbar-c {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .nav-wrap-c {
     background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0 50px;
+    padding: 0 100px;
     background: transparent;
   }
 }
 
-@media only screen and (min-width: 768px) and (min-width: 992px) {
-  .nav-wrap-c {
-    padding: 0 100px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (min-width: 1200px) {
+@media only screen and (min-width: 992px) and (min-width: 1200px) {
   .nav-wrap-c {
     padding: 0 200px;
   }
 }
 
-@media only screen and (min-width: 768px) and (min-width: 1450px) {
+@media only screen and (min-width: 992px) and (min-width: 1450px) {
   .nav-wrap-c {
     padding: 0 300px;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .nav-wrap-c .navbar-c {
     padding: 0;
   }
@@ -289,8 +298,17 @@ button {
     justify-content: center;
     align-items: center;
     justify-content: flex-start;
-    width: 230px;
+    width: 150px;
   }
+}
+
+@media only screen and (min-width: 992px) and (min-width: 1450px) {
+  .nav-wrap-c .navbar-c .nav-brand-c {
+    width: 200px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
   .nav-wrap-c .navbar-c .nav-brand-c img {
     width: 100%;
   }
@@ -324,13 +342,13 @@ button {
   }
 }
 
-@media only screen and (min-width: 768px) and (min-width: 992px) {
+@media only screen and (min-width: 992px) and (min-width: 992px) {
   .nav-wrap-c .collapsed-nav-c .nav-links-c .nav-link-c {
     margin: 0 20px;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .nav-wrap-c .collapsed-nav-c .nav-links-c .nav-link-c a {
     color: black;
     font-size: 16px;
@@ -665,7 +683,6 @@ button {
 
 .header .header-text .header-buttons a {
   flex-basis: 70%;
-  margin: 0 10px;
 }
 
 .header .header-text .header-buttons button {
@@ -676,7 +693,7 @@ button {
   width: 100%;
 }
 
-.header .header-text .header-buttons .button-solid {
+.header .header-text .header-buttons a:last-child {
   display: none;
 }
 
@@ -768,8 +785,37 @@ button {
 
 @media only screen and (min-width: 768px) {
   .header .header-text {
-    width: 360px;
+    width: 380px;
     margin-right: 50px;
+  }
+  .header .header-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-width: 992px) {
+  .header .header-text h2 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header .header-text .header-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .header .header-text .header-buttons a {
+    flex-basis: 48%;
+  }
+  .header .header-text .header-buttons a button {
+    width: 100%;
+  }
+  .header .header-text .header-buttons a:last-child {
+    display: block;
   }
 }
 
@@ -792,35 +838,6 @@ button {
   .header .header-text {
     left: 60%;
     margin-right: 300px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .header .header-text h2 {
-    font-size: 1.8rem;
-  }
-}
-
-@media only screen and (min-width: 768px) and (min-width: 992px) {
-  .header .header-text h2 {
-    font-size: 2rem;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .header .header-text .header-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .header .header-text .header-buttons button {
-    flex-basis: 48%;
-  }
-  .header .header-text .header-buttons .button-solid {
-    display: block;
   }
 }
 
@@ -1047,7 +1064,7 @@ button {
 .home-info {
   padding: 30px 5%;
   margin: 150px 0 100px;
-  background-color: #05696F;
+  background-color: #005458;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1080,7 +1097,6 @@ button {
     margin: 250px 50px 100px;
     border-radius: 10px;
     box-shadow: 0 4px 15px -5px #010b20;
-    background-image: linear-gradient(to right, #354B46, #05696F, #354B46);
   }
   .home-info p {
     text-align: center;
@@ -1370,7 +1386,7 @@ button {
     opacity: 0;
     width: 90%;
     max-width: 700px;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 20px;
     z-index: 0;
   }
@@ -1774,8 +1790,9 @@ button {
 @media only screen and (min-width: 992px) {
   .about-header {
     padding: 130px 100px 20px;
+    height: 700px;
+    margin: 100px 0;
     flex-direction: row;
-    height: 100vh;
     align-items: flex-start;
   }
 }
@@ -1904,7 +1921,7 @@ button {
 }
 
 .contact {
-  padding: 100px 20px 250px;
+  padding: 150px 20px 250px;
   height: fit-content;
   background-image: url("../images/services-bg.jpg");
   background-position: center bottom;
@@ -1915,32 +1932,32 @@ button {
 
 @media only screen and (min-width: 600px) {
   .contact {
-    padding: 100px 50px 300px;
+    padding: 150px 50px 300px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .contact {
-    padding: 100px 50px 350px;
+    padding: 150px 50px 350px;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .contact {
-    padding: 100px 100px 450px;
+    padding: 150px 100px 450px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .contact {
-    padding: 100px 200px 450px;
+    padding: 150px 200px 450px;
     background-position: 0 400px;
   }
 }
 
 @media only screen and (min-width: 1450px) {
   .contact {
-    padding: 100px 300px 450px;
+    padding: 150px 300px 450px;
     background-position: 0 250px;
   }
 }
@@ -1953,6 +1970,11 @@ button {
   margin: auto;
 }
 
+.contact .contact-form input, .contact .contact-form textarea {
+  background: none;
+  border: 1px solid #4b4b4b;
+}
+
 .contact .contact-form input[type=number]::-webkit-inner-spin-button,
 .contact .contact-form input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -1963,18 +1985,93 @@ button {
   height: 150px;
 }
 
-.quote h1 {
+.background-img {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .background-img {
+    display: block;
+    position: relative;
+  }
+  .background-img img {
+    position: absolute;
+    top: 600px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-width: 992px) {
+  .background-img img {
+    top: 500px;
+  }
+}
+
+#free-quote-1 h1 {
   text-align: center;
 }
 
-.quote .step {
-  margin: 50px auto 0;
-  width: 90%;
+#free-quote-1 h2 {
+  font-weight: 300;
 }
 
-.quote .step .hr {
+#free-quote-1 .step {
+  margin: 50px auto 0;
+  width: 90%;
+  max-width: 500px;
+}
+
+@media only screen and (min-width: 768px) {
+  #free-quote-1 .step {
+    max-width: 700px;
+  }
+}
+
+#free-quote-1 .step .hr {
   margin: 5px 0 20px;
   width: 100%;
   height: 1px;
   background-color: black;
+}
+
+@media only screen and (min-width: 768px) {
+  #free-quote-1 .step .hr {
+    height: 2px;
+    margin: 5px 0 -30px;
+  }
+}
+
+#free-quote-1 .hidden-form {
+  padding-top: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  #free-quote-1 {
+    padding-bottom: 130px;
+    margin-bottom: 0;
+    height: 1900px;
+    background-image: linear-gradient(white 600px, #01a5ec 601px);
+  }
+  #free-quote-1 .quote-icons {
+    margin-top: 1000px;
+    margin-bottom: 150px;
+  }
+  #free-quote-1 .hidden-form {
+    position: static;
+    display: flex;
+    overflow: visible;
+    background: none;
+    z-index: 0;
+    padding: 50px 0 0 0;
+  }
+  #free-quote-1 .hidden-form .hidden-form-top-btn {
+    display: none;
+  }
+  #free-quote-1 .hidden-form-wrap {
+    margin: 50px auto;
+    border-radius: 10px;
+  }
+  #free-quote-1 .hidden-form-wrap input, #free-quote-1 .hidden-form-wrap textarea {
+    border-radius: 5px;
+  }
 }
