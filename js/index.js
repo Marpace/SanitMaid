@@ -153,10 +153,11 @@ nextBtn.addEventListener("click", function(){
 
 // quote form functions-----------------------------------------------
 
-const quoteItems = [...document.querySelectorAll(".quote-form-item")]
-const quoteButtons = [...document.querySelectorAll(".quote-form-item-button")]
-const iconText = [...document.querySelectorAll(".quote-icons-item-text")]
-const quoteTitles = document.querySelectorAll(".quote-form-item-title h2")
+const quoteItems = [...document.querySelectorAll(".quote-form-item")];
+const quoteButtons = [...document.querySelectorAll(".quote-form-item-button")];
+const iconText = [...document.querySelectorAll(".quote-icons-item-text")];
+const iconItems = [...document.querySelectorAll(".quote-icons-item")];
+const quoteTitles = document.querySelectorAll(".quote-form-item-title h2");
 
 const sizeText = document.querySelector(".size-text");
 const sizeButton = document.querySelector(".size-button");
@@ -187,6 +188,7 @@ $("#size-options").parent().prev().click(function(){
     $("#size-input").focus();
 });
 
+
 // adding event listeners to the next buttons in the quote form
 quoteButtons.forEach(button => {
     button.addEventListener("click", function(){
@@ -214,6 +216,8 @@ quoteButtons.forEach(button => {
         }
     });
 });
+
+
 // function for size section because of different input type 
 sizeButton.addEventListener("click", function(){
     
@@ -272,10 +276,7 @@ extrasButton.addEventListener("click", function(){
                 }
             }
         });
-    } else {
-        $(this).next().fadeIn(400, "linear")
     }
-    
 });
 
 //Event listener for book now button to display second part of quote form
@@ -288,3 +289,23 @@ $(".hidden-form-top-btn").click(function(){
     $(".hidden-form").fadeOut(600, "linear")
 });
 
+// // Function for clicking quote icons 
+// iconItems.forEach(icon => {
+//     icon.addEventListener("click", function(){
+//         quoteItems.forEach(item => {
+//             item.classList.remove("fade-in");
+//         })
+//         quoteItems[iconItems.indexOf(icon)].classList.add("fade-in")
+//     });
+// });
+
+
+//function for displaying options as they are selected
+const displayOptions = function() {
+    $(".quote-form-item-options").each(()=> {
+        
+        console.log($(this).children("input[type=radio]").next().html())
+    });
+};
+
+displayOptions();

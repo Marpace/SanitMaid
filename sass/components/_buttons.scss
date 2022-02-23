@@ -6,13 +6,29 @@ button {
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
     transition: .3s;
-    border-radius: 9px;
+    border-radius: 5px;
 }
 .button-outline {
+    width: 80%;
+    max-width: 200px;
+    padding: 5px 20px;
+    border: 1px solid $logo_blue;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    transition: .3s;
+    border-radius: 5px;
     background: none;
     color: black;
 }
 .button-outline-light {
+    width: 80%;
+    max-width: 200px;
+    padding: 5px 20px;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    transition: .3s;
+    border-radius: 5px;
+    background: none;
     color: white;
     border: 1px solid white;
 }

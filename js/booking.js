@@ -119,10 +119,7 @@ extrasButton.addEventListener("click", function(){
                 }
             }
         });
-    } else {
-        $(this).next().fadeIn(400, "linear")
-    }
-    
+    } 
 });
 
 //Event listener for book now button to display second part of quote form
@@ -130,3 +127,4 @@ extrasButton.addEventListener("click", function(){
 $(".quote-price-button").click(function(){
     $(".hidden-form").fadeIn(600, "linear")
 });
+

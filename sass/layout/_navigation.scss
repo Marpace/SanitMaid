@@ -54,7 +54,7 @@
         position: absolute;
         top: 0;
         left: 100%;  
-        height: 100vh;
+        height: 120vh;
         width: 100%;
         background: $logo_blue;
         transition: .4s;
@@ -85,7 +85,9 @@
                 }
             }
             #booking-btn {
-                display: none
+                display: flex;
+                justify-content: center;
+                font-size: 18px;
             }
             #services-drop-down{
                 @include flex_centered(column);
@@ -191,21 +193,25 @@
                 justify-content: flex-end;
     
                 .nav-link-c {
-                    margin: 0 15px;
-                    @include flex_centered(row);
-                    justify-content: end;
-                    @include responsive($desktop){
-                        margin: 0 20px;
+                    margin: 0 10px;
+                    @include responsive($desktop_large){
+                        margin: 0 15px;
                     }
-    
-                    a {
-                        color: black;
-                        font-size: 16px;
-                        font-weight: 700;
+                    
+                    h2{
+                        display: flex;
+                        align-items: center;
+                        a {
+                            color: black;
+                            font-size: 16px;
+                            font-weight: 700;
+                        }
                     }
                 }
                 #booking-btn {
-                    display: block;
+                    color: $logo_blue;
+                    border: 1px solid $logo_blue;
+                    min-width: 138px
                 }
                 #services-drop-down{
                     @include flex_centered(column);
