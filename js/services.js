@@ -7,14 +7,23 @@
 // })
 
 $(".accordion-toggle").click(function(){
-    if($(this).parent().next().css("display") === "block"){
-        $(this).parent().next().slideToggle(600, "swing");
-    } else {
-        $(".accordion-item-content").each(function(){
-            $(this).slideUp(600, "swing");
-        });
-        $(this).parent().next().slideToggle(600, "swing");
-    }
+
+    //++++++++++ Uncomment to have only one section 
+    //of the accordion open ++++++++++
+
+    // if($(this).parent().next().css("display") === "block"){
+    //     $(this).parent().next().slideToggle(600, "swing");
+    // } else {
+    //     $(".accordion-item-content").each(function(){
+    //         $(this).slideUp(600, "swing");
+    //     });
+    //     $(this).parent().next().slideToggle(600, "swing");
+    // }
+
+    $(this).parent().next().slideToggle(600, "swing");
+
+    $(this).children(".toggle-2").toggleClass("accordion-open");
+
     console.log($(".accordion-toggle"))
 });
 

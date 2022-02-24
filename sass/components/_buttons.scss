@@ -19,6 +19,7 @@ button {
     border-radius: 5px;
     background: none;
     color: black;
+    cursor: pointer;
 }
 .button-outline-light {
     width: 80%;
@@ -31,6 +32,7 @@ button {
     background: none;
     color: white;
     border: 1px solid white;
+    cursor: pointer;
 }
 .button-outline:hover {
     background-color: $logo_blue;
@@ -40,6 +42,7 @@ button {
     background-color: $logo_blue;
     border: 1px solid $logo_blue;
     color: white;
+    cursor: pointer;
 }
 .button-solid:hover {
     background: none;

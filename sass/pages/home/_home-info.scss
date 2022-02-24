@@ -38,9 +38,6 @@
        &-button {
            @include flex_centered(row);
 
-           button {
-               font-size: 21px;
-           }
            button:hover a{
                color: $logo_blue;
            }
