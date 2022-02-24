@@ -46,5 +46,10 @@ button {
 }
 .button-solid:hover {
     background: none;
-    color: black;
+    color: $logo_blue;
+}
+.button-outline-light:hover {
+    background-color: aliceblue;
+    color: $logo_blue;
+    font-weight: 600;
 }

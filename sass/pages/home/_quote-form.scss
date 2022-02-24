@@ -32,7 +32,7 @@
            &-wrap {
                display: none;
            }
-            &-title, &-header, &-options, &-button {
+            &-title, &-header, &-options {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-evenly;
@@ -114,17 +114,8 @@
                 justify-content: center;
             }
             &-button, .quote-price-button, .size-button, .extras-button{
-                width: 80%;
-                max-width: 200px;
-                padding: 5px;
-                background: none;
-                border: 2px solid white;
-                border-radius: 13px;
-                color: white;
-                font-size: 30px;
-                margin: 0 auto 20px;
-                cursor: pointer;
                 text-align: center;
+                margin: 20px auto;
             }
             .validation-alert {
                 color: white;

@@ -29,10 +29,6 @@ a {
   width: 100%;
 }
 
-a:visited {
-  color: inherit;
-}
-
 h1, h2, h3, h4, p {
   margin: 0;
 }
@@ -109,7 +105,13 @@ button {
 
 .button-solid:hover {
   background: none;
-  color: black;
+  color: #010b20;
+}
+
+.button-outline-light:hover {
+  background-color: aliceblue;
+  color: #010b20;
+  font-weight: 600;
 }
 
 .nav-wrap-c {
@@ -214,7 +216,7 @@ button {
 }
 
 .nav-wrap-c .collapsed-nav-c .nav-links-c .nav-link-c h2 {
-  color: white;
+  transition: .4s;
 }
 
 .nav-wrap-c .collapsed-nav-c .nav-links-c .nav-link-c h2 a {
@@ -222,12 +224,12 @@ button {
   font-weight: 400;
   font-size: 30px;
   transition: .7s;
+  color: white;
 }
 
-.nav-wrap-c .collapsed-nav-c .nav-links-c #booking-btn {
+.nav-wrap-c .collapsed-nav-c .nav-links-c .booking-btn {
   display: flex;
   justify-content: center;
-  color: white;
 }
 
 .nav-wrap-c .collapsed-nav-c .nav-links-c #services-drop-down {
@@ -275,6 +277,7 @@ button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .nav-wrap-c .collapsed-nav-c .nav-button-c button {
@@ -378,13 +381,11 @@ button {
     align-items: center;
   }
   .nav-wrap-c .collapsed-nav-c .nav-links-c .nav-link-c h2 a {
-    color: black;
     font-size: 16px;
     font-weight: 700;
+    color: black;
   }
-  .nav-wrap-c .collapsed-nav-c .nav-links-c #booking-btn {
-    color: #010b20;
-    border: 1px solid #010b20;
+  .nav-wrap-c .collapsed-nav-c .nav-links-c .booking-btn {
     min-width: 138px;
   }
   .nav-wrap-c .collapsed-nav-c .nav-links-c #services-drop-down {
@@ -441,7 +442,7 @@ button {
     perspective: 1000px;
   }
   .nav-wrap-c .collapsed-nav-c .nav-button-c {
-    display: none;
+    margin-left: 10px;
   }
 }
 
@@ -1216,7 +1217,7 @@ button {
   display: none;
 }
 
-.quote-form-item-title, .quote-form-item-header, .quote-form-item-options, .quote-form-item-button {
+.quote-form-item-title, .quote-form-item-header, .quote-form-item-options {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -1312,17 +1313,8 @@ button {
 }
 
 .quote-form-item-button, .quote-form-item .quote-price-button, .quote-form-item .size-button, .quote-form-item .extras-button {
-  width: 80%;
-  max-width: 200px;
-  padding: 5px;
-  background: none;
-  border: 2px solid white;
-  border-radius: 13px;
-  color: white;
-  font-size: 30px;
-  margin: 0 auto 20px;
-  cursor: pointer;
   text-align: center;
+  margin: 20px auto;
 }
 
 .quote-form-item .validation-alert {

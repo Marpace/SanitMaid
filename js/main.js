@@ -11,7 +11,7 @@ const navLogo = document.querySelector(".nav-brand-c");
 const navWrap = document.querySelector(".nav-wrap-c");
 const dropDownIcon = document.querySelector(".services-nav-link i");
 const currentPageUnderline = document.querySelector(".current-page");
-
+const bookingBtn = document.querySelector(".booking-btn");
 
 
 
@@ -22,6 +22,12 @@ const dropDownMenu = document.querySelector(".drop-down-menu");
 //Selecting body element
 const body = document.querySelector("body");
 
+
+if(screen.width >= 992){
+    bookingBtn.classList.add("button-outline");
+    bookingBtn.classList.remove("button-outline-light");
+    console.log("screen size is 992 or bigger")
+}
 
 // detecting scroll to animate navbar when scrolled 80px from top
 body.addEventListener("scroll", function() {
@@ -37,24 +43,28 @@ body.addEventListener("scroll", function() {
                 div.style.backgroundColor = "rgb(255, 255, 255)";
             });      
         } else if(screen.width >= 768) {
+            bookingBtn.classList.remove("button-outline");
+            bookingBtn.classList.add("button-outline-light");
             navWrap.style.backgroundColor = "rgb(1, 11, 32)";
             navBar.style.height = "80px";
             // dropDownIcon.style.color = "white";
             currentPageUnderline.style.borderBottom = "2px solid white";
-            $("#booking-btn").css({
-                "border": "1px solid white",
-                "color": "white"
-            });
+            // $("#booking-btn").css({
+            //     "border": "1px solid white",
+            //     "color": "white"
+            // });
             navLinks.forEach(link => {
                 link.style.color = "white"
             });
         } 
     } else {
         if(screen.width >= 768) {
-            $("#booking-btn").css({
-                "border": "1px solid rgb(1, 11, 32)",
-                "color": "rgb(1, 11, 32)"
-            });
+            bookingBtn.classList.remove("button-outline-light");
+            bookingBtn.classList.add("button-outline");
+            // $("#booking-btn").css({
+            //     "border": "1px solid rgb(1, 11, 32)",
+            //     "color": "rgb(1, 11, 32)"
+            // });
             navLinks.forEach(link => {
                 link.style.color = "rgb(1, 11, 32)";
             });

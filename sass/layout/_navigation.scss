@@ -77,19 +77,19 @@
                     }
                 }
                 h2{
-                    color: white;
+                    transition: .4s;
                     a {
                         text-decoration: none;
                         font-weight: 400;
                         font-size: 30px;
                         transition: .7s;
+                        color: white;
                     }
                 }
             }
-            #booking-btn {
+            .booking-btn {
                 display: flex;
                 justify-content: center;
-                color: white
             }
             #services-drop-down{
                 @include flex_centered(column);
@@ -127,6 +127,7 @@
         }
         .nav-button-c {
             @include flex_centered(row);
+            justify-content: flex-end;
 
             button {
                 width: 70%;
@@ -204,15 +205,13 @@
                         display: flex;
                         align-items: center;
                         a {
-                            color: black;
                             font-size: 16px;
                             font-weight: 700;
+                            color: black;
                         }
                     }
                 }
-                #booking-btn {
-                    color: $logo_blue;
-                    border: 1px solid $logo_blue;
+                .booking-btn {
                     min-width: 138px
                 }
                 #services-drop-down{
@@ -266,7 +265,7 @@
                 }
             }
             .nav-button-c {
-                display: none;
+                margin-left: 10px;
             }
         }
     }
