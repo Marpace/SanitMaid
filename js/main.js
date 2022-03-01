@@ -29,73 +29,17 @@ if(screen.width >= 992){
     console.log("screen size is 992 or bigger")
 }
 
-// detecting scroll to animate navbar when scrolled 80px from top
+// // detecting scroll to animate navbar when scrolled 80px from top
 body.addEventListener("scroll", function() {
-    if(body.scrollTop > 80){
-        if(screen.width < 768) {
-            navBar.style.backgroundColor = ("rgb(1, 11, 32)");
-            navBar.style.height = "80px"
-            // navLogo.style.height = "50px"
-            // navLogo.style.width = "50px"
-            // navLogo.style.marginLeft = "20px"
-            navLogo.children[0].style.color = "white";
-            togglerDivs.forEach(div => {
-                div.style.backgroundColor = "rgb(255, 255, 255)";
-            });      
-        } else if(screen.width >= 768) {
-            bookingBtn.classList.remove("button-outline");
-            bookingBtn.classList.add("button-outline-light");
-            navWrap.style.backgroundColor = "rgb(1, 11, 32)";
-            navBar.style.height = "80px";
-            // dropDownIcon.style.color = "white";
-            currentPageUnderline.style.borderBottom = "2px solid white";
-            // $("#booking-btn").css({
-            //     "border": "1px solid white",
-            //     "color": "white"
-            // });
-            navLinks.forEach(link => {
-                link.style.color = "white"
-            });
-        } 
-    } else {
-        if(screen.width >= 768) {
-            bookingBtn.classList.remove("button-outline-light");
-            bookingBtn.classList.add("button-outline");
-            // $("#booking-btn").css({
-            //     "border": "1px solid rgb(1, 11, 32)",
-            //     "color": "rgb(1, 11, 32)"
-            // });
-            navLinks.forEach(link => {
-                link.style.color = "rgb(1, 11, 32)";
-            });
-            currentPageUnderline.style.borderBottom = "2px solid black";
-            // dropDownIcon.style.color = "black"
+    if(screen.width >= 992){
+        if(body.scrollTop > 80) {
+            navWrap.style.backgroundColor = "white";
+        } else {
+            navWrap.style.backgroundColor = "transparent";    
         }
-        navBar.style.height = "100px"
-        navWrap.style.backgroundColor = "";
-        navBar.style.backgroundColor = "";
-        navLogo.children[0].style.color = "black";
-        // navLogo.style.height = "60px"
-        // navLogo.style.width = "60px"
-        // navLogo.style.marginLeft = "0px"
-    
-        togglerDivs.forEach(div => {
-            div.style.backgroundColor = "rgb(0, 0, 0)";
-        })
     }
 });
 
-
-//   function for animating navbar toggler when page loads 
-window.onload = function (){
-    let delay = 0;
-    togglerDivs.forEach(div => {
-        setTimeout(() => {
-            div.style.width = "100%"
-        }, delay);
-        delay += 150;
-    });
-};
 
 
     // Navbar toggler animation 
@@ -103,11 +47,6 @@ window.onload = function (){
 let isVisible = false;
 const toggleMenu = function(){
     if(!isVisible){
-
-        togglerDivs.forEach(div => {
-            div.style.backgroundColor = "white";
-        })
-
         //Toggler into "x" animation
         togglerDivs[0].style.top = "15px";
         togglerDivs[2].style.top = "15px";
@@ -116,43 +55,20 @@ const toggleMenu = function(){
             togglerDivs[0].style.transform = "rotate(45deg)";
             togglerDivs[2].style.transform = "rotate(-45deg)";
         }, 200);
-
         // Nav menu extend  animation 
-        navMenu.style.left = "0"
-
-        navLogo.children[0].style.color = "white";
-        
-        isVisible = true;
-        
+        navMenu.style.left = "0"       
+        isVisible = true;    
     } else {
-        
-        if (navBar.style.backgroundColor === ""){
-            togglerDivs.forEach(div => {
-                div.style.backgroundColor = "rgb(0, 0, 0)";
-            })
-        }
-        
-        
         //Toggler into lines animation
         togglerDivs[0].style.transform = "rotate(0deg)";
         togglerDivs[2].style.transform = "rotate(0deg)";
-        togglerDivs[1].style.opacity = "1";
-        
+        togglerDivs[1].style.opacity = "1";      
         setTimeout(() => {
             togglerDivs[0].style.top = "";
             togglerDivs[2].style.top = "30px";
-        }, 200);
-        
+        }, 200);     
         // Nav menu collapse animation
         navMenu.style.left = "100%"
-
-        if(getComputedStyle(navBar).backgroundColor !== "rgb(1, 11, 32)"){
-            navLogo.children[0].style.color = "black";
-        }
-        
-        // Drop down collapse animation
-        // dropDownMenu.style.height = "0px"
-
         isVisible = false;
     }
 }

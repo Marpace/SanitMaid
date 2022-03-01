@@ -1,14 +1,8 @@
 
 // Select header element 
-const headerText = document.querySelector(".header-text");
-const donwArrow = document.querySelector(".down-arrow")
+const headerSection = document.querySelector(".header");
+const donwArrow = document.querySelector(".down-arrow");
 
-// //on load animations **REMINDER** switch this to css animation 
-// window.onload = function (){  
-//     //animating header text element
-//     headerText.style.opacity = "1";
-//     headerText.style.transform = "translateY(0)";
-// };
 
 body.addEventListener("scroll", function() {
     if(body.scrollTop> 80){
@@ -17,6 +11,12 @@ body.addEventListener("scroll", function() {
         donwArrow.style.opacity = "1";
     }
 })
+
+donwArrow.addEventListener("click", function(){
+    const height = parseInt(getComputedStyle(headerSection).height);
+    body.scrollTop = height;
+});
+
 
 
 //selecting carousel elements
@@ -37,7 +37,7 @@ function switchClass(el, class1, class2){
 let imageIndex = 3
 let infoIndex = 0
 let indicatorIndex = 0;
-
+;
 //boolean to check if animation is in progress
 let isAnimating = false;
 
@@ -153,12 +153,15 @@ nextBtn.addEventListener("click", function(){
 
 // quote form functions-----------------------------------------------
 
-const quoteItems = [...document.querySelectorAll(".quote-form-item")];
-const quoteButtons = [...document.querySelectorAll(".quote-form-item-button")];
-const iconText = [...document.querySelectorAll(".quote-icons-item-text")];
-const iconItems = [...document.querySelectorAll(".quote-icons-item")];
-const quoteTitles = document.querySelectorAll(".quote-form-item-title h2");
+// quote form functions-----------------------------------------------
 
+const quoteItems = [...document.querySelectorAll(".quote-form-item")]
+const quoteButtons = [...document.querySelectorAll(".quote-form-item-button")]
+const iconText = [...document.querySelectorAll(".quote-icons-item-text")]
+const icons = [...document.querySelectorAll(".quote-icons-item")]
+const quoteTitles = document.querySelectorAll(".quote-form-item-title h2")
+
+const sizeIcon = document.querySelector(".size-icon");
 const sizeText = document.querySelector(".size-text");
 const sizeButton = document.querySelector(".size-button");
 const sizeInput = document.querySelector("#size-input");
@@ -167,6 +170,10 @@ const sizeInput = document.querySelector("#size-input");
 const extrasButton = document.querySelector(".extras-button");
 const extrasInput = document.querySelectorAll(".extras-input");
 const extrasIconItem = document.querySelector(".extras-icon-item");
+
+const frequencyBtn = document.querySelector(".frequency-btn");
+const frequencyIcon = document.querySelector(".frequency-icon");
+
 
 //slide content up and down when an option is clicked
 $(".quote-form-item-title").click(function(){
@@ -188,7 +195,6 @@ $("#size-options").parent().prev().click(function(){
     $("#size-input").focus();
 });
 
-
 // adding event listeners to the next buttons in the quote form
 quoteButtons.forEach(button => {
     button.addEventListener("click", function(){
@@ -207,7 +213,7 @@ quoteButtons.forEach(button => {
             } else {
                 quoteItems[index].classList.toggle("fade-in")
                 quoteItems[index + 1].classList.toggle("fade-in")
-                iconText[index].style.opacity = "1";
+                icons[index].style.opacity = "1";
                 iconText[index].innerHTML = selectedValue;
             }
             index += 1;
@@ -216,8 +222,6 @@ quoteButtons.forEach(button => {
         }
     });
 });
-
-
 // function for size section because of different input type 
 sizeButton.addEventListener("click", function(){
     
@@ -237,7 +241,8 @@ sizeButton.addEventListener("click", function(){
             quoteItems[3].classList.toggle("fade-in");
             quoteItems[4].classList.toggle("fade-in");
             quoteItems.splice(3, 1);
-            sizeText.style.opacity = "1"
+            icons.splice(3, 1);
+            sizeIcon.style.opacity = "1"
             sizeText.innerHTML = `${sizeInput.value} ft&sup2;`
         }
     }
@@ -260,6 +265,7 @@ extrasButton.addEventListener("click", function(){
             quoteItems[3].classList.toggle("fade-in");
             quoteItems[4].classList.toggle("fade-in");
             quoteItems.splice(3, 1);
+            icons.splice(3, 1);
         }
         extrasInput.forEach(input => {
             if (input.checked){
@@ -273,10 +279,11 @@ extrasButton.addEventListener("click", function(){
                     newEl.classList.add("extras-text");
                     newEl.innerHTML = input.nextElementSibling.innerHTML;
                     extrasIconItem.appendChild(newEl);
+                    extrasIconItem.style.opacity = "1";
                 }
             }
         });
-    }
+    } 
 });
 
 //Event listener for book now button to display second part of quote form

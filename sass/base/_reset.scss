@@ -14,8 +14,7 @@ html,body
   font-style: normal;
   scroll-behavior: smooth;
 }
-
 body {
-  // background-color: $background_green;
-  background-color: white;
+  background-image: url("../images/water.jpg");
+  background-size: cover;
 }

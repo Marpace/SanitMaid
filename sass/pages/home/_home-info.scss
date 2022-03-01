@@ -1,7 +1,7 @@
 .home-info {
    padding: 30px 5%;
    margin: 150px 0 100px;
-   background-color: #005458;
+   background-color: $logo_blue;
 //    border: 2px solid $logo_blue;
    @include flex_centered(column);
 

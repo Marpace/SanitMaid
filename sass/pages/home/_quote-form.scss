@@ -88,7 +88,7 @@
                 input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
                     border: 1px solid rgb(190, 190, 190);
                 }       
-                input[type="number"]{
+                input[type=number]{
                     width: 100px;
                     background: none;
                     border: none;
@@ -254,6 +254,8 @@
                         @include flex_centered(column);
                         justify-content: space-between;
                         height: 100px;
+                        opacity: 0;
+                        transition: .6s;
         
                         &-icon {
                             min-height: 50px;
@@ -272,8 +274,6 @@
                             background-color: $logo_blue;
                             color: white;
                             border-radius: 10px;
-                            opacity: 0;
-                            transition: .6s;
                         }
                         .extras-text {
                             opacity: 1;
@@ -308,6 +308,7 @@
                             position: relative;
                             height: 50px;
                             width: 50px;
+                            cursor: pointer;
                             div{
                                 position: absolute;
                                 top: 20px;

@@ -3,8 +3,10 @@
 const quoteItems = [...document.querySelectorAll(".quote-form-item")]
 const quoteButtons = [...document.querySelectorAll(".quote-form-item-button")]
 const iconText = [...document.querySelectorAll(".quote-icons-item-text")]
+const icons = [...document.querySelectorAll(".quote-icons-item")]
 const quoteTitles = document.querySelectorAll(".quote-form-item-title h2")
 
+const sizeIcon = document.querySelector(".size-icon");
 const sizeText = document.querySelector(".size-text");
 const sizeButton = document.querySelector(".size-button");
 const sizeInput = document.querySelector("#size-input");
@@ -13,6 +15,10 @@ const sizeInput = document.querySelector("#size-input");
 const extrasButton = document.querySelector(".extras-button");
 const extrasInput = document.querySelectorAll(".extras-input");
 const extrasIconItem = document.querySelector(".extras-icon-item");
+
+const frequencyBtn = document.querySelector(".frequency-btn");
+const frequencyIcon = document.querySelector(".frequency-icon");
+
 
 //slide content up and down when an option is clicked
 $(".quote-form-item-title").click(function(){
@@ -52,7 +58,7 @@ quoteButtons.forEach(button => {
             } else {
                 quoteItems[index].classList.toggle("fade-in")
                 quoteItems[index + 1].classList.toggle("fade-in")
-                iconText[index].style.opacity = "1";
+                icons[index].style.opacity = "1";
                 iconText[index].innerHTML = selectedValue;
             }
             index += 1;
@@ -80,7 +86,8 @@ sizeButton.addEventListener("click", function(){
             quoteItems[3].classList.toggle("fade-in");
             quoteItems[4].classList.toggle("fade-in");
             quoteItems.splice(3, 1);
-            sizeText.style.opacity = "1"
+            icons.splice(3, 1);
+            sizeIcon.style.opacity = "1"
             sizeText.innerHTML = `${sizeInput.value} ft&sup2;`
         }
     }
@@ -103,6 +110,7 @@ extrasButton.addEventListener("click", function(){
             quoteItems[3].classList.toggle("fade-in");
             quoteItems[4].classList.toggle("fade-in");
             quoteItems.splice(3, 1);
+            icons.splice(3, 1);
         }
         extrasInput.forEach(input => {
             if (input.checked){
@@ -116,6 +124,7 @@ extrasButton.addEventListener("click", function(){
                     newEl.classList.add("extras-text");
                     newEl.innerHTML = input.nextElementSibling.innerHTML;
                     extrasIconItem.appendChild(newEl);
+                    extrasIconItem.style.opacity = "1";
                 }
             }
         });

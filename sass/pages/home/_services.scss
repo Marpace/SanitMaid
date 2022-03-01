@@ -62,7 +62,7 @@
                 width: 120%;
                 height: 100%;
                 z-index: 20;
-                background-color: white;
+                // background-color: white;
             }
             @include responsive($tablet_large) {
                 .mobile-image {
@@ -70,6 +70,7 @@
                 }
                 .desktop-image {
                     display: block;
+                    border: 1px solid white;
                 }
                 img {
                     height: 200px;
