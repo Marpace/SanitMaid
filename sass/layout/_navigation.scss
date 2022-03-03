@@ -10,7 +10,7 @@
         z-index: 10;
         @include flex_centered(row);
         justify-content: space-between;
-        height: 100px;
+        height: 80px;
         padding: 20px;
         background: white;
         transition: background-color .8s, height .8s;
@@ -162,6 +162,7 @@
         }
     
         .navbar-c {
+            height: 100px;
             padding: 0;
             background: none;
 

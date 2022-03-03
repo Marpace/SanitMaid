@@ -17,7 +17,7 @@ html, body {
 
 body {
   background-image: url("../images/water.jpg");
-  background-size: cover;
+  background-size: 100% 120%;
 }
 
 body {
@@ -131,7 +131,7 @@ button {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 80px;
   padding: 20px;
   background: white;
   transition: background-color .8s, height .8s;
@@ -322,6 +322,7 @@ button {
 
 @media only screen and (min-width: 992px) {
   .nav-wrap-c .navbar-c {
+    height: 100px;
     padding: 0;
     background: none;
   }
@@ -665,11 +666,13 @@ button {
 .header {
   width: 100%;
   height: 110vh;
+  padding-top: 150px;
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  align-items: flex-start;
   background-image: url("../images/ripples 2.png");
   background-size: cover;
   background-position: center;
@@ -748,7 +751,7 @@ button {
 
 .header .down-arrow {
   position: absolute;
-  bottom: 15vh;
+  bottom: 20vh;
   left: 50%;
   transform: translateX(-50%);
   animation-name: upDown;
