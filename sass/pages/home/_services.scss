@@ -62,7 +62,6 @@
                 width: 120%;
                 height: 100%;
                 z-index: 20;
-                // background-color: white;
             }
             @include responsive($tablet_large) {
                 .mobile-image {
@@ -90,13 +89,13 @@
                     left: 150%;
                     top: 50%;
                     transform: translateY(-50%);
-                    z-index: 10;
+                    z-index: -2;
                 }
                 .image-far-left-c {
                     left: -50%;
                     top: 50%;
                     transform: translateY(-50%);
-                    z-index: 10;
+                    z-index: -2;
                 }
             }
             @include responsive($desktop) {

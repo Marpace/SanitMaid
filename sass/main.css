@@ -662,7 +662,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   background-image: url("../images/water.webp");
   background-size: cover;
@@ -960,13 +960,13 @@ button {
     left: 150%;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
+    z-index: -2;
   }
   .services-carousel-images .image-far-left-c {
     left: -50%;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
+    z-index: -2;
   }
 }
 
@@ -1632,7 +1632,7 @@ button {
   }
 }
 
-.cleaning img {
+.cleaning #services-bg {
   position: absolute;
   width: 100%;
   object-fit: cover;
@@ -1641,7 +1641,7 @@ button {
 }
 
 @media only screen and (min-width: 600px) {
-  .cleaning img {
+  .cleaning #services-bg {
     top: 350px;
   }
 }
@@ -1744,11 +1744,14 @@ button {
   padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
-  background-color: rgba(248, 250, 249, 0.9);
+  background-color: rgba(241, 241, 241, 0.5);
+  border-radius: 10px;
 }
 
 .cleaning .accordion-item-content-wrap .room {
+  position: relative;
   padding: 15px;
+  width: 100%;
   min-width: 150px;
 }
 
@@ -1758,17 +1761,83 @@ button {
   }
 }
 
+.cleaning .accordion-item-content-wrap .room-img {
+  display: none;
+}
+
 .cleaning .accordion-item-content-wrap .room-title h3 {
   font-size: 25px;
   font-weight: 500;
+  color: #010b20;
 }
 
 .cleaning .accordion-item-content-wrap .room-list ul {
-  padding-left: 20px;
+  list-style: none;
+}
+
+.cleaning .accordion-item-content-wrap .room-list ul li {
+  margin: 5px 0;
 }
 
 .cleaning .accordion-item-content-wrap .room-list ul li p {
   font-size: 18px;
+  color: #010b20;
+}
+
+@media only screen and (min-width: 992px) {
+  .cleaning .accordion-item-content-wrap {
+    padding: 30px 20px;
+    background-color: transparent;
+  }
+  .cleaning .accordion-item-content-wrap .room {
+    max-height: 300px;
+    padding: 0;
+    margin: 10px;
+    flex-basis: 30%;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    transition: 2s;
+    cursor: pointer;
+  }
+  .cleaning .accordion-item-content-wrap .room-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+  }
+  .cleaning .accordion-item-content-wrap .room-img img {
+    height: 125%;
+    width: 100%;
+    opacity: 1;
+    object-fit: cover;
+    transition: height 3s ease-out, opacity .3s linear;
+  }
+  .cleaning .accordion-item-content-wrap .room-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 10px 10%;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    transition: .5s;
+  }
+  .cleaning .accordion-item-content-wrap .room-title h3 {
+    font-size: 35px;
+    font-weight: 800;
+  }
+  .cleaning .accordion-item-content-wrap .room:hover .room-img img {
+    height: 150%;
+  }
 }
 
 .about-header {
